@@ -1,5 +1,6 @@
 import Hero from "@/components/home/Hero";
 import Benefits from "@/components/home/Benefits";
+import HvacTraining from "@/components/home/HvacTraining";
 import TrainingJourney from "@/components/home/TrainingJourney";
 import Eligibility from "@/components/home/Eligibility";
 import FAQ from "@/components/home/FAQ";
@@ -12,6 +13,7 @@ export default function Home() {
       <main>
         <Hero />
         <Benefits />
+        <HvacTraining />
         <TrainingJourney />
         <Eligibility />
         <FAQ />

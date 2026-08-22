@@ -115,7 +115,7 @@ export default function Registration() {
   return (
     <section
       id="register"
-      className="relative overflow-hidden bg-slate-50 py-24 sm:py-32"
+      className="relative scroll-mt-4 overflow-hidden bg-slate-50 py-16 sm:py-20 lg:py-24"
     >
       {/* Background decoration */}
 

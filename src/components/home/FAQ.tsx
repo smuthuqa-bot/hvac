@@ -48,7 +48,7 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="relative overflow-hidden bg-white py-24 sm:py-32"
+      className="relative scroll-mt-4 overflow-hidden bg-white py-12 sm:py-18 lg:py-24"
     >
       {/* Background decoration */}
       <div className="absolute -left-40 top-20 h-80 w-80 rounded-full bg-green-50 blur-3xl" />

@@ -37,7 +37,7 @@ export default function Eligibility() {
   return (
     <section
       id="eligibility"
-      className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-32"
+      className="relative overflow-hidden bg-slate-50 py-16 sm:py-20 lg:py-32"
     >
       {/* Background decoration */}
       <div className="pointer-events-none absolute -right-32 top-10 h-80 w-80 rounded-full bg-green-50 blur-3xl sm:h-[500px] sm:w-[500px]" />

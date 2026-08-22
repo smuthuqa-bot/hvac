@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Navbar from "@/components/layout/Navbar";
+import HeroBackground from "@/components/home/HeroBackground";
 
 export default function Hero() {
   return (
@@ -27,6 +28,9 @@ export default function Hero() {
       />
 
       {/* Navbar */}
+
+      <HeroBackground />
+      
       <Navbar />
 
       {/* Hero content */}
