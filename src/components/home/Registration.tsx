@@ -348,6 +348,29 @@ export default function Registration() {
                       </div>
                     )}
 
+                    <div className="rounded-2xl border-2 border-green-500 bg-green-50 p-5">
+                    <div className="flex items-start gap-4">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-green-600 text-lg font-black text-white">
+                        ✓
+                      </div>
+
+                      <div>
+                        <h3 className="text-base font-black text-slate-950 sm:text-lg">
+                          1-Year Mandatory Internship
+                        </h3>
+
+                        <p className="mt-2 text-sm leading-6 text-slate-600">
+                          Candidates must complete a{" "}
+                          <span className="font-black text-green-700">
+                            mandatory 1-year internship
+                          </span>{" "}
+                          as part of the ACME HVAC skill development and career
+                          program.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
                     {/* Submit */}
 
                     <button

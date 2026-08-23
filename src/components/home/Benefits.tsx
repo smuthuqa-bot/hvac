@@ -9,6 +9,9 @@ const benefits = [
     title: "Government + Company Stipend",
     description:
       "Financial support during the course duration to help you focus on learning and skill development.",
+    bg: "bg-green-50/70",
+    iconBg: "bg-green-100",
+    iconText: "text-green-600",
   },
   {
     number: "02",
@@ -16,6 +19,9 @@ const benefits = [
     title: "Government Certificate",
     description:
       "Build your professional profile with certification opportunities associated with the training program.",
+    bg: "bg-blue-50/70",
+    iconBg: "bg-blue-100",
+    iconText: "text-blue-600",
   },
   {
     number: "03",
@@ -23,6 +29,9 @@ const benefits = [
     title: "Attractive Salary",
     description:
       "Develop practical HVAC skills and move toward exciting career opportunities with competitive earning potential.",
+    bg: "bg-amber-50/70",
+    iconBg: "bg-amber-100",
+    iconText: "text-amber-600",
   },
   {
     number: "04",
@@ -30,6 +39,9 @@ const benefits = [
     title: "Food & Accommodation",
     description:
       "Food and accommodation support is available for eligible candidates coming from outside the local area.",
+    bg: "bg-purple-50/70",
+    iconBg: "bg-purple-100",
+    iconText: "text-purple-600",
   },
   {
     number: "05",
@@ -37,6 +49,19 @@ const benefits = [
     title: "Uniform Provided",
     description:
       "Get the required professional uniform for your training and workplace experience.",
+    bg: "bg-cyan-50/70",
+    iconBg: "bg-cyan-100",
+    iconText: "text-cyan-600",
+  },
+  {
+    number: "06",
+    icon: "✓",
+    title: "1-Year Experience Certificate",
+    description:
+      "After successfully completing one year of training and practical experience, receive an experience certificate to strengthen your professional career.",
+    bg: "bg-rose-50/70",
+    iconBg: "bg-rose-100",
+    iconText: "text-rose-600",
   },
 ];
 
@@ -44,12 +69,12 @@ export default function Benefits() {
   return (
     <section
       id="benefits"
-      className="relative overflow-hidden bg-white py-16 sm:py-20"
+      className="relative overflow-hidden bg-slate-50 py-16 sm:py-20"
     >
       {/* Background decoration */}
       <div className="pointer-events-none absolute -left-32 top-20 h-72 w-72 rounded-full bg-green-100/60 blur-3xl sm:h-96 sm:w-96" />
 
-      <div className="pointer-events-none absolute -bottom-32 -right-32 h-80 w-80 rounded-full bg-blue-50 blur-3xl sm:h-96 sm:w-96" />
+      <div className="pointer-events-none absolute -bottom-32 -right-32 h-80 w-80 rounded-full bg-blue-100/60 blur-3xl sm:h-96 sm:w-96" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Heading */}
@@ -79,29 +104,46 @@ export default function Benefits() {
         </motion.div>
 
         {/* Benefits grid */}
-        <div className="mt-12 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:grid-cols-2">
+        <div className="mt-12 grid gap-5 sm:mt-14 sm:grid-cols-2 lg:grid-cols-3">
           {benefits.map((benefit, index) => (
             <motion.div
               key={benefit.number}
-              initial={{ opacity: 0, y: 35 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
+              initial={{
+                opacity: 0,
+                y: 35,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+                amount: 0.1,
+              }}
               transition={{
                 duration: 0.55,
                 delay: index * 0.08,
               }}
-              whileHover={{ y: -7 }}
-              className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-5 shadow-sm transition-shadow duration-300 hover:shadow-2xl sm:p-6"
+              whileHover={{
+                y: -7,
+              }}
+              className={`group relative overflow-hidden rounded-3xl border border-white bg-white p-5 shadow-sm transition-all duration-300 hover:shadow-2xl sm:p-6 ${benefit.bg}`}
             >
               {/* Number */}
-              <div className="pointer-events-none absolute right-4 top-3 text-5xl font-black text-slate-100 transition-colors duration-300 group-hover:text-green-50 sm:right-5 sm:top-5">
+              <div className="pointer-events-none absolute right-4 top-3 text-5xl font-black text-slate-200/70 transition-colors duration-300 group-hover:text-green-100 sm:right-5 sm:top-5">
                 {benefit.number}
               </div>
 
               {/* Icon */}
-              <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-green-50 text-lg font-black text-green-600 transition-all duration-300 group-hover:bg-green-600 group-hover:text-white sm:h-14 sm:w-14 sm:text-xl">
+              <motion.div
+                whileHover={{
+                  scale: 1.08,
+                  rotate: 2,
+                }}
+                className={`relative flex h-12 w-12 items-center justify-center rounded-2xl text-lg font-black shadow-sm transition-all duration-300 group-hover:bg-green-600 group-hover:text-white sm:h-14 sm:w-14 sm:text-xl ${benefit.iconBg} ${benefit.iconText}`}
+              >
                 {benefit.icon}
-              </div>
+              </motion.div>
 
               {/* Content */}
               <div className="relative mt-6 sm:mt-7">
@@ -109,24 +151,38 @@ export default function Benefits() {
                   {benefit.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-slate-500 sm:mt-4">
+                <p className="mt-3 text-sm leading-6 text-slate-600 sm:mt-4">
                   {benefit.description}
                 </p>
               </div>
 
               {/* Bottom accent */}
               <div className="absolute bottom-0 left-0 h-1 w-0 bg-green-500 transition-all duration-500 group-hover:w-full" />
+
+              {/* Hover glow */}
+              <div className="pointer-events-none absolute -bottom-16 -right-16 h-32 w-32 rounded-full bg-green-400/10 blur-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
             </motion.div>
           ))}
         </div>
 
         {/* Bottom highlight */}
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7 }}
-          className="relative mt-12 overflow-hidden rounded-[1.75rem] bg-[#082B57] p-6 text-white sm:mt-12 sm:rounded-[2rem] sm:p-8 lg:p-10"
+          initial={{
+            opacity: 0,
+            y: 25,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.2,
+          }}
+          transition={{
+            duration: 0.7,
+          }}
+          className="relative mt-12 overflow-hidden rounded-[1.75rem] bg-[#082B57] p-6 text-white sm:mt-14 sm:rounded-[2rem] sm:p-8 lg:p-10"
         >
           {/* Decorative glow */}
           <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-green-500/10 blur-3xl" />
@@ -146,8 +202,12 @@ export default function Benefits() {
 
             <motion.a
               href="#register"
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.97 }}
+              whileHover={{
+                scale: 1.04,
+              }}
+              whileTap={{
+                scale: 0.97,
+              }}
               className="w-full shrink-0 rounded-full bg-green-500 px-6 py-3.5 text-center text-sm font-bold text-white transition hover:bg-green-400 sm:w-auto sm:px-7 sm:py-4 sm:text-base"
             >
               Register for Training →

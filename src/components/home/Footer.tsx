@@ -19,7 +19,7 @@ export default function Footer() {
             </div>
 
             <div className="mt-1 text-xs font-semibold tracking-[0.35em] text-green-400">
-              SDC
+              Skill Development Center
             </div>
 
             <p className="mt-6 max-w-md text-sm leading-7 text-slate-400">

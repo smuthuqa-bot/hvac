@@ -12,13 +12,13 @@ const steps = [
     icon: "→",
   },
   {
-    number: "02",
-    title: "Skill Training",
-    shortTitle: "Learn",
-    description:
-      "Develop practical HVAC knowledge and industry-focused technical skills through structured training.",
-    icon: "⚙",
-  },
+  number: "02",
+  title: "Skill Training",
+  shortTitle: "2 Months Training",
+  description:
+    "Complete 2 months of structured HVAC skill training with practical sessions and industry-focused technical learning.",
+  icon: "⚙",
+},
   {
     number: "03",
     title: "Certification",
@@ -49,7 +49,7 @@ export default function TrainingJourney() {
   return (
     <section
       id="program"
-      className="relative overflow-hidden bg-slate-50 py-16 sm:py-20"
+      className="relative overflow-hidden bg-slate-50 py-2 sm:py-2 lg:py-2"
     >
       {/* Background glow */}
       <div className="pointer-events-none absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-green-100/60 blur-3xl sm:h-96 sm:w-96" />
@@ -75,7 +75,7 @@ export default function TrainingJourney() {
             <span className="block text-green-600">To Earning.</span>
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-500 sm:mt-6 sm:text-lg sm:leading-8">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-700 sm:mt-6 sm:text-lg sm:leading-8">
             A structured journey designed to take you from registration
             to practical experience and career opportunities.
           </p>
@@ -151,7 +151,7 @@ export default function TrainingJourney() {
                     {step.title}
                   </h3>
 
-                  <p className="mx-auto mt-3 max-w-[220px] text-sm leading-6 text-slate-500">
+                  <p className="mx-auto mt-3 max-w-[220px] text-sm leading-6 text-slate-700">
                     {step.description}
                   </p>
                 </div>
@@ -220,7 +220,7 @@ export default function TrainingJourney() {
                     {step.title}
                   </h3>
 
-                  <p className="mt-2 text-sm leading-6 text-slate-500">
+                  <p className="mt-2 text-sm leading-6 text-slate-700">
                     {step.description}
                   </p>
                 </div>
@@ -273,7 +273,7 @@ export default function TrainingJourney() {
                 </div>
               </div>
 
-              <p className="mt-5 max-w-2xl text-sm leading-6 text-slate-500 sm:text-base sm:leading-7">
+              <p className="mt-5 max-w-2xl text-sm leading-6 text-slate-700 sm:text-base sm:leading-7">
                 The program includes a mandatory one-year internship,
                 giving candidates valuable exposure to a professional
                 working environment and helping them build confidence

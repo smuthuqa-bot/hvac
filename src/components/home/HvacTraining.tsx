@@ -5,28 +5,28 @@ import { motion } from "framer-motion";
 
 const trainingImages = [
   {
-    src: "/training/hvac-training-1.jpg",
-    title: "Practical HVAC Training",
+    src: "/training/owner.jpeg",
+    title: "Founder & Director of ACME HVAC",
     description: "Hands-on learning with real HVAC equipment.",
     featured: true,
   },
   {
-    src: "/training/hvac-training-2.jpg",
-    title: "AC Installation",
-    description: "Learn professional installation techniques.",
+    src: "/training/award.jpeg",
+    title: "Industrial Icon of India Award by FTDF",
+    description: "An initiative by Flare Talent Development Federation (FTDF) to recognize and celebrate outstanding achievements, leadership, innovation, and contributions across Indian industries",
   },
   {
-    src: "/training/hvac-training-3.jpg",
+    src: "/training/tra2.jpg",
     title: "Technical Training",
     description: "Industry-focused technical sessions.",
   },
   {
-    src: "/training/hvac-training-4.jpg",
+    src: "/training/tra1.jpg",
     title: "Hands-on Practice",
     description: "Practice with real equipment.",
   },
   {
-    src: "/training/hvac-training-5.jpg",
+    src: "/training/tra3.jpg",
     title: "Industry Skills",
     description: "Build practical workplace skills.",
   },
@@ -36,7 +36,7 @@ export default function HvacTraining() {
   return (
     <section
       id="gallery"
-      className="relative scroll-mt-4 overflow-hidden bg-slate-50 py-12 sm:py-20 lg:py-24"
+      className="relative scroll-mt-4 overflow-hidden bg-slate-50 py-4 sm:py-4 lg:py-4"
     >
       {/* Background decoration */}
       <div className="absolute -left-40 top-20 h-96 w-96 rounded-full bg-green-100/60 blur-3xl" />
