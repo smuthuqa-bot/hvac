@@ -13,7 +13,7 @@ const trainingImages = [
   {
     src: "/training/award.jpeg",
     title: "Industrial Icon of India Award by FTDF",
-    description: "An initiative by Flare Talent Development Federation (FTDF) to recognize and celebrate outstanding achievements, leadership, innovation, and contributions across Indian industries",
+    description: "An initiative by FTDF to recognize",
   },
   {
     src: "/training/tra2.jpg",

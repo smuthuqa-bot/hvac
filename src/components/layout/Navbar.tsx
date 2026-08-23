@@ -40,14 +40,35 @@ export default function Navbar() {
         }`}
       >
         <nav className="mx-auto flex h-[82px] max-w-7xl items-center justify-between px-3 sm:px-6 lg:px-8">
-          
+
           {/* =====================================================
               LEFT - ACME LOGO
           ===================================================== */}
           <a
             href="#home"
             onClick={closeMenu}
-            className="group flex h-[62px] w-[205px] shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white px-3 py-1.5 shadow-lg transition-all duration-300 hover:shadow-xl sm:w-[220px]"
+            className="
+              group
+              flex
+              h-[58px]
+              w-[165px]
+              shrink-0
+              items-center
+              justify-center
+              overflow-hidden
+              rounded-xl
+              bg-white
+              px-2
+              py-1
+              shadow-lg
+              transition-all
+              duration-300
+              hover:shadow-xl
+
+              sm:h-[62px]
+              sm:w-[220px]
+              sm:px-3
+            "
           >
             <img
               src="/acmelogo-bg.png"
@@ -68,17 +89,16 @@ export default function Navbar() {
               >
                 {link.label}
 
-                {/* Green hover indicator */}
                 <span className="absolute bottom-1 left-1/2 h-0.5 w-0 -translate-x-1/2 rounded-full bg-[#65C943] transition-all duration-300 group-hover:w-6" />
               </a>
             ))}
           </div>
 
           {/* =====================================================
-              RIGHT - TN SKILL + REGISTER
+              RIGHT - DESKTOP TN SKILL + REGISTER
           ===================================================== */}
           <div className="hidden items-center gap-3 md:flex">
-            
+
             {/* TN Skill Logo */}
             <div className="flex h-[52px] w-[145px] items-center justify-center overflow-hidden rounded-xl bg-white px-2 shadow-lg">
               <img
@@ -105,32 +125,49 @@ export default function Navbar() {
               MOBILE CONTROLS
           ===================================================== */}
           <div className="flex items-center gap-2 md:hidden">
-            
-            {/* Mobile TN Skill logo */}
-            <div className="flex h-10 w-[90px] items-center justify-center overflow-hidden rounded-lg bg-white px-1.5 shadow-md">
-              <img
-                src="/tnskill-logo.png"
-                alt="TN Skill"
-                className="h-full w-full object-contain"
-              />
-            </div>
 
             {/* Apply */}
             <a
               href="#register"
               onClick={closeMenu}
-              className="rounded-full bg-[#65C943] px-3.5 py-2.5 text-xs font-black text-white shadow-lg shadow-[#65C943]/20"
+              className="
+                rounded-full
+                bg-[#65C943]
+                px-3
+                py-2.5
+                text-xs
+                font-black
+                text-white
+                shadow-lg
+                shadow-[#65C943]/20
+                whitespace-nowrap
+              "
             >
               Apply
             </a>
 
-            {/* Menu button */}
+            {/* Hamburger */}
             <button
               type="button"
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
               onClick={() => setOpen((value) => !value)}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white backdrop-blur-md transition hover:bg-white/15"
+              className="
+                flex
+                h-10
+                w-10
+                shrink-0
+                items-center
+                justify-center
+                rounded-full
+                border
+                border-white/15
+                bg-white/10
+                text-white
+                backdrop-blur-md
+                transition
+                hover:bg-white/15
+              "
             >
               {open ? (
                 <span className="text-2xl font-light leading-none">
@@ -158,7 +195,7 @@ export default function Navbar() {
           }`}
         >
           <div className="p-3">
-            
+
             {links.map((link, index) => (
               <a
                 key={link.href}
@@ -183,6 +220,7 @@ export default function Navbar() {
               Register Now
               <span>→</span>
             </a>
+
           </div>
         </div>
       </header>
