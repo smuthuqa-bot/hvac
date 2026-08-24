@@ -12,7 +12,6 @@ export default function Hero() {
       id="home"
       className="relative overflow-hidden bg-white text-[#082B57]"
     >
-      
       {/* =====================================================
           BACKGROUND
       ===================================================== */}
@@ -48,20 +47,43 @@ export default function Hero() {
         />
       </div>
 
+      {/* =====================================================
+          SPARK ANIMATION
+      ===================================================== */}
       <SparkBurst />
 
+      {/* =====================================================
+          NAVBAR
+      ===================================================== */}
       <Navbar />
 
       {/* =====================================================
           HERO CONTENT
       ===================================================== */}
-      <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 pb-16 pt-8 sm:px-6 sm:pb-20 lg:grid-cols-[0.9fr_1.1fr] lg:gap-8 lg:px-8 lg:pb-20 lg:pt-10">
-
+      <div
+        className="
+          relative
+          mx-auto
+          grid
+          max-w-7xl
+          items-center
+          gap-10
+          px-4
+          pb-16
+          pt-8
+          sm:px-6
+          sm:pb-20
+          lg:grid-cols-[0.9fr_1.1fr]
+          lg:gap-8
+          lg:px-8
+          lg:pb-20
+          lg:pt-10
+        "
+      >
         {/* =================================================
             LEFT CONTENT
         ================================================= */}
         <div className="relative z-10">
-
           {/* =================================================
               TOP BADGE
           ================================================= */}
@@ -78,7 +100,22 @@ export default function Hero() {
               duration: 0.7,
               ease: easeOut,
             }}
-            className="mb-5 inline-flex items-center gap-2 rounded-full border border-green-200 bg-green-50 px-4 py-2 text-xs font-bold text-green-700 sm:text-sm"
+            className="
+              mb-5
+              inline-flex
+              items-center
+              gap-2
+              rounded-full
+              border
+              border-green-200
+              bg-green-50
+              px-4
+              py-2
+              text-xs
+              font-bold
+              text-green-700
+              sm:text-sm
+            "
           >
             <motion.span
               animate={{
@@ -114,7 +151,15 @@ export default function Hero() {
                 delay: 0.25,
                 ease: easeOut,
               }}
-              className="text-[clamp(2.75rem,10vw,5rem)] font-black leading-[0.94] tracking-tight sm:text-6xl lg:text-7xl xl:text-8xl"
+              className="
+                text-[clamp(2.75rem,10vw,5rem)]
+                font-black
+                leading-[0.94]
+                tracking-tight
+                sm:text-6xl
+                lg:text-7xl
+                xl:text-8xl
+              "
             >
               Build Your
             </motion.h1>
@@ -136,7 +181,16 @@ export default function Hero() {
                 delay: 0.42,
                 ease: easeOut,
               }}
-              className="text-[clamp(2.75rem,10vw,5rem)] font-black leading-[0.94] tracking-tight text-[#65C943] sm:text-6xl lg:text-7xl xl:text-8xl"
+              className="
+                text-[clamp(2.75rem,10vw,5rem)]
+                font-black
+                leading-[0.94]
+                tracking-tight
+                text-[#65C943]
+                sm:text-6xl
+                lg:text-7xl
+                xl:text-8xl
+              "
             >
               HVAC Career.
             </motion.h1>
@@ -177,7 +231,15 @@ export default function Hero() {
               duration: 0.7,
               ease: easeOut,
             }}
-            className="mt-6 max-w-xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8"
+            className="
+              mt-6
+              max-w-xl
+              text-base
+              leading-7
+              text-slate-600
+              sm:text-lg
+              sm:leading-8
+            "
           >
             Get industry-focused HVAC skill training,
             certification, internship opportunities and
@@ -203,7 +265,24 @@ export default function Hero() {
                 duration: 0.9,
                 ease: easeOut,
               }}
-              className="relative mt-7 inline-flex items-center gap-3 overflow-hidden rounded-2xl border border-green-200 bg-white px-4 py-3 shadow-lg shadow-green-100 sm:px-5 sm:py-4"
+              className="
+                relative
+                mt-7
+                inline-flex
+                items-center
+                gap-3
+                overflow-hidden
+                rounded-2xl
+                border
+                border-green-200
+                bg-white
+                px-4
+                py-3
+                shadow-lg
+                shadow-green-100
+                sm:px-5
+                sm:py-4
+              "
             >
               {/* Light sweep */}
               <motion.div
@@ -218,7 +297,16 @@ export default function Hero() {
                   duration: 1.2,
                   ease: "easeInOut",
                 }}
-                className="pointer-events-none absolute inset-y-0 w-20 bg-gradient-to-r from-transparent via-green-100/80 to-transparent"
+                className="
+                  pointer-events-none
+                  absolute
+                  inset-y-0
+                  w-20
+                  bg-gradient-to-r
+                  from-transparent
+                  via-green-100/80
+                  to-transparent
+                "
               />
 
               {/* Icon */}
@@ -236,7 +324,21 @@ export default function Hero() {
                   duration: 0.5,
                   ease: easeOut,
                 }}
-                className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-green-500 text-xl text-white shadow-lg shadow-green-500/30"
+                className="
+                  relative
+                  flex
+                  h-11
+                  w-11
+                  shrink-0
+                  items-center
+                  justify-center
+                  rounded-xl
+                  bg-green-500
+                  text-xl
+                  text-white
+                  shadow-lg
+                  shadow-green-500/30
+                "
               >
                 ✓
               </motion.div>
@@ -256,7 +358,12 @@ export default function Hero() {
                     delay: 1.55,
                     duration: 0.5,
                   }}
-                  className="text-lg font-black text-[#082B57] sm:text-xl"
+                  className="
+                    text-lg
+                    font-black
+                    text-[#082B57]
+                    sm:text-xl
+                  "
                 >
                   100% Job Guarantee*
                 </motion.div>
@@ -272,7 +379,12 @@ export default function Hero() {
                     delay: 1.8,
                     duration: 0.5,
                   }}
-                  className="mt-0.5 text-[11px] text-slate-500 sm:text-xs"
+                  className="
+                    mt-0.5
+                    text-[11px]
+                    text-slate-500
+                    sm:text-xs
+                  "
                 >
                   Terms & conditions apply
                 </motion.div>
@@ -297,7 +409,14 @@ export default function Hero() {
               duration: 0.7,
               ease: easeOut,
             }}
-            className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center"
+            className="
+              mt-7
+              flex
+              flex-col
+              gap-3
+              sm:flex-row
+              sm:items-center
+            "
           >
             <motion.a
               href="#register"
@@ -308,7 +427,21 @@ export default function Hero() {
               whileTap={{
                 scale: 0.97,
               }}
-              className="rounded-full bg-green-600 px-7 py-3.5 text-center text-sm font-bold text-white shadow-xl shadow-green-600/20 sm:px-8 sm:py-4 sm:text-base"
+              className="
+                rounded-full
+                bg-green-600
+                px-7
+                py-3.5
+                text-center
+                text-sm
+                font-bold
+                text-white
+                shadow-xl
+                shadow-green-600/20
+                sm:px-8
+                sm:py-4
+                sm:text-base
+              "
             >
               Start Your Journey →
             </motion.a>
@@ -318,7 +451,23 @@ export default function Hero() {
               whileHover={{
                 y: -2,
               }}
-              className="rounded-full border border-[#082B57]/20 px-7 py-3.5 text-center text-sm font-semibold text-[#082B57] transition hover:border-green-500 hover:bg-green-50 sm:px-8 sm:py-4 sm:text-base"
+              className="
+                rounded-full
+                border
+                border-[#082B57]/20
+                px-7
+                py-3.5
+                text-center
+                text-sm
+                font-semibold
+                text-[#082B57]
+                transition
+                hover:border-green-500
+                hover:bg-green-50
+                sm:px-8
+                sm:py-4
+                sm:text-base
+              "
             >
               Explore Program
             </motion.a>
@@ -340,7 +489,17 @@ export default function Hero() {
               delay: 2,
               duration: 0.7,
             }}
-            className="mt-8 grid max-w-lg grid-cols-3 gap-4 border-t border-slate-200 pt-6 sm:gap-8"
+            className="
+              mt-8
+              grid
+              max-w-lg
+              grid-cols-3
+              gap-4
+              border-t
+              border-slate-200
+              pt-6
+              sm:gap-8
+            "
           >
             <div>
               <div className="text-xl font-black sm:text-2xl">
@@ -393,12 +552,27 @@ export default function Hero() {
             delay: 0.25,
             ease: [0.16, 1, 0.3, 1],
           }}
-          className="relative mx-auto w-full max-w-xl"
+          className="
+            relative
+            mx-auto
+            w-full
+            max-w-xl
+          "
         >
           {/* Glow */}
-          <div className="absolute -inset-5 rounded-[2.5rem] bg-green-500/10 blur-2xl" />
+          <div
+            className="
+              absolute
+              -inset-5
+              rounded-[2.5rem]
+              bg-green-500/10
+              blur-2xl
+            "
+          />
 
-          {/* Banner */}
+          {/* =================================================
+              BANNER
+          ================================================= */}
           <motion.div
             animate={{
               y: [0, -6, 0],
@@ -408,7 +582,17 @@ export default function Hero() {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-1.5 shadow-2xl shadow-slate-300/40"
+            className="
+              relative
+              overflow-hidden
+              rounded-[2rem]
+              border
+              border-slate-200
+              bg-white
+              p-1.5
+              shadow-2xl
+              shadow-slate-300/40
+            "
           >
             <div className="overflow-hidden rounded-[1.6rem]">
               <img
@@ -419,17 +603,35 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Career badge */}
+          {/* =================================================
+              CAREER FOCUSED - LEFT CENTER
+          ================================================= */}
           <motion.div
             animate={{
-              y: [0, -8, 0],
+              y: [0, -6, 0],
             }}
             transition={{
               duration: 4,
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="absolute -bottom-4 -left-3 rounded-2xl border border-green-100 bg-white px-4 py-3 shadow-xl sm:-left-6 sm:px-5 sm:py-4"
+            className="
+              absolute
+              left-[20px]
+              top-[40%]
+              z-20
+              -translate-y-1/2
+              rounded-2xl
+              border
+              border-green-100
+              bg-white
+              px-4
+              py-3
+              shadow-xl
+              sm:left-[-24px]
+              sm:px-5
+              sm:py-4
+            "
           >
             <div className="text-[10px] font-bold uppercase tracking-wider text-green-600">
               Career Focused
@@ -440,17 +642,35 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Eligibility badge */}
+          {/* =================================================
+              OPEN FOR - RIGHT CENTER
+          ================================================= */}
           <motion.div
             animate={{
-              y: [0, 8, 0],
+              y: [0, 6, 0],
             }}
             transition={{
               duration: 4.5,
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="absolute right-[-5px] top-8 rounded-2xl border border-green-100 bg-white px-4 py-3 shadow-xl sm:-right-5 sm:top-12 sm:px-5 sm:py-4"
+            className="
+              absolute
+              right-[-10px]
+              top-[38%]
+              z-20
+              -translate-y-1/2
+              rounded-2xl
+              border
+              border-green-100
+              bg-white
+              px-4
+              py-3
+              shadow-xl
+              sm:right-[-24px]
+              sm:px-5
+              sm:py-4
+            "
           >
             <div className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
               Open For
@@ -467,14 +687,58 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Bottom transition */}
-      <div className="absolute bottom-0 left-0 right-0 h-6 rounded-t-[50%] bg-slate-50 sm:h-10" />
+      {/* =====================================================
+          BOTTOM TRANSITION
+      ===================================================== */}
+      <div
+        className="
+          absolute
+          bottom-0
+          left-0
+          right-0
+          h-6
+          rounded-t-[50%]
+          bg-slate-50
+          sm:h-10
+        "
+      />
 
-      {/* Mobile sticky CTA */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-slate-200 bg-white/95 p-3 shadow-2xl backdrop-blur-xl md:hidden">
+      {/* =====================================================
+          MOBILE STICKY CTA
+      ===================================================== */}
+      <div
+        className="
+          fixed
+          bottom-0
+          left-0
+          right-0
+          z-40
+          border-t
+          border-slate-200
+          bg-white/95
+          p-3
+          shadow-2xl
+          backdrop-blur-xl
+          md:hidden
+        "
+      >
         <a
           href="#register"
-          className="flex w-full items-center justify-center rounded-xl bg-green-600 px-5 py-3.5 text-sm font-bold text-white shadow-lg shadow-green-600/20"
+          className="
+            flex
+            w-full
+            items-center
+            justify-center
+            rounded-xl
+            bg-green-600
+            px-5
+            py-3.5
+            text-sm
+            font-bold
+            text-white
+            shadow-lg
+            shadow-green-600/20
+          "
         >
           Register Now →
         </a>
