@@ -66,22 +66,22 @@ export default function Hero() {
           mx-auto
           grid
           max-w-7xl
-          items-center
+          items-start
           gap-10
           px-4
           pb-16
           pt-8
           sm:px-6
           sm:pb-20
-          lg:grid-cols-[0.9fr_1.1fr]
-          lg:gap-8
+          lg:grid-cols-[0.95fr_1.05fr]
+          lg:gap-10
           lg:px-8
           lg:pb-20
           lg:pt-10
         "
       >
         {/* =================================================
-            LEFT CONTENT
+            LEFT SIDE
         ================================================= */}
         <div className="relative z-10">
           {/* =================================================
@@ -90,7 +90,7 @@ export default function Hero() {
           <motion.div
             initial={{
               opacity: 0,
-              y: -35,
+              y: -30,
             }}
             animate={{
               opacity: 1,
@@ -132,15 +132,41 @@ export default function Hero() {
           </motion.div>
 
           {/* =================================================
-              MAIN HEADING
+              SMALLER HERO HEADING
           ================================================= */}
-
-          {/* First line */}
           <div className="overflow-hidden">
             <motion.h1
               initial={{
                 opacity: 0,
-                y: 100,
+                y: 70,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.75,
+                delay: 0.2,
+                ease: easeOut,
+              }}
+              className="
+                text-[clamp(2.2rem,6vw,3.8rem)]
+                font-black
+                leading-[0.95]
+                tracking-tight
+                sm:text-5xl
+                lg:text-6xl
+              "
+            >
+              Build Your
+            </motion.h1>
+          </div>
+
+          <div className="overflow-hidden">
+            <motion.h1
+              initial={{
+                opacity: 0,
+                y: 80,
               }}
               animate={{
                 opacity: 1,
@@ -148,107 +174,281 @@ export default function Hero() {
               }}
               transition={{
                 duration: 0.8,
-                delay: 0.25,
+                delay: 0.35,
                 ease: easeOut,
               }}
               className="
-                text-[clamp(2.75rem,10vw,5rem)]
+                text-[clamp(2.2rem,6vw,3.8rem)]
                 font-black
-                leading-[0.94]
-                tracking-tight
-                sm:text-6xl
-                lg:text-7xl
-                xl:text-8xl
-              "
-            >
-              Build Your
-            </motion.h1>
-          </div>
-
-          {/* Second line */}
-          <div className="overflow-hidden">
-            <motion.h1
-              initial={{
-                opacity: 0,
-                y: 110,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.9,
-                delay: 0.42,
-                ease: easeOut,
-              }}
-              className="
-                text-[clamp(2.75rem,10vw,5rem)]
-                font-black
-                leading-[0.94]
+                leading-[0.95]
                 tracking-tight
                 text-[#65C943]
-                sm:text-6xl
-                lg:text-7xl
-                xl:text-8xl
+                sm:text-5xl
+                lg:text-6xl
               "
             >
               HVAC Career.
             </motion.h1>
           </div>
 
-          {/* Animated underline */}
+          {/* Heading underline */}
           <motion.div
             initial={{
               width: 0,
               opacity: 0,
             }}
             animate={{
-              width: "110px",
+              width: "90px",
               opacity: 1,
             }}
             transition={{
-              delay: 1.05,
-              duration: 0.7,
+              delay: 0.9,
+              duration: 0.6,
               ease: easeOut,
             }}
-            className="mt-5 h-1.5 rounded-full bg-green-500"
+            className="mt-4 h-1.5 rounded-full bg-green-500"
           />
 
           {/* =================================================
-              DESCRIPTION
+              SHORT DESCRIPTION
           ================================================= */}
           <motion.p
             initial={{
               opacity: 0,
-              y: 30,
+              y: 25,
             }}
             animate={{
               opacity: 1,
               y: 0,
             }}
             transition={{
-              delay: 1.05,
+              delay: 0.85,
               duration: 0.7,
               ease: easeOut,
             }}
             className="
-              mt-6
+              mt-5
               max-w-xl
-              text-base
-              leading-7
+              text-sm
+              leading-6
               text-slate-600
-              sm:text-lg
-              sm:leading-8
+              sm:text-base
+              sm:leading-7
             "
           >
             Get industry-focused HVAC skill training,
-            certification, internship opportunities and
-            a pathway toward your professional career.
+            certification, internship opportunities and a
+            pathway toward your professional career.
           </motion.p>
 
           {/* =================================================
+              OWNER IMAGE + INFORMATION
+          ================================================= */}
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 35,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              delay: 1,
+              duration: 0.8,
+              ease: easeOut,
+            }}
+            className="
+              mt-7
+              overflow-hidden
+              rounded-[1.75rem]
+              border
+              border-slate-200
+              bg-white
+              shadow-xl
+              shadow-slate-200/60
+            "
+          >
+            {/* =================================================
+                OWNER IMAGE
+            ================================================= */}
+            <div className="relative h-[280px] w-full overflow-hidden sm:h-[340px]">
+              <motion.img
+                initial={{
+                  scale: 1.08,
+                }}
+                animate={{
+                  scale: 1,
+                }}
+                transition={{
+                  duration: 1.2,
+                  delay: 1,
+                  ease: easeOut,
+                }}
+                src="training/owner.jpeg"
+                alt="Mr. Nagaraj G - Managing Director"
+                className="
+                  h-full
+                  w-full
+                  object-cover
+                  object-center
+                "
+              />
+
+              {/* Image bottom gradient */}
+              <div
+                className="
+                  pointer-events-none
+                  absolute
+                  inset-x-0
+                  bottom-0
+                  h-28
+                  bg-gradient-to-t
+                  from-black/45
+                  to-transparent
+                "
+              />
+
+              {/* Experience badge */}
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  x: -30,
+                }}
+                animate={{
+                  opacity: 1,
+                  x: 0,
+                }}
+                transition={{
+                  delay: 1.45,
+                  duration: 0.6,
+                  ease: easeOut,
+                }}
+                className="
+                  absolute
+                  bottom-4
+                  left-4
+                  rounded-xl
+                  border
+                  border-white/20
+                  bg-[#082B57]/90
+                  px-4
+                  py-2.5
+                  text-white
+                  shadow-xl
+                  backdrop-blur-md
+                "
+              >
+                <p className="text-lg font-black leading-none">
+                  30+
+                </p>
+
+                <p className="mt-1 text-[9px] font-bold uppercase tracking-wider text-green-300">
+                  Years Experience
+                </p>
+              </motion.div>
+            </div>
+
+            {/* =================================================
+                OWNER DETAILS
+            ================================================= */}
+            <div className="p-5 sm:p-6">
+              <p
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  tracking-[0.2em]
+                  text-green-600
+                  sm:text-xs
+                "
+              >
+                ACME HVAC Leadership
+              </p>
+
+              <h3
+                className="
+                  mt-1
+                  text-xl
+                  font-black
+                  text-[#082B57]
+                  sm:text-2xl
+                "
+              >
+                MR. NAGARAJ.G
+              </h3>
+
+              <p className="mt-0.5 text-sm font-semibold text-slate-500">
+                Managing Director
+              </p>
+
+              {/* =================================================
+                  COMPANY CONTENT
+              ================================================= */}
+              <div className="mt-5 border-t border-slate-100 pt-5">
+                <p className="text-sm leading-6 text-slate-600">
+                  <span className="font-bold text-[#082B57]">
+                    ACME HVAC
+                  </span>{" "}
+                  (Previously known as ACME Services) was established
+                  in December 2019 at its present base in{" "}
+                  <span className="font-semibold text-[#082B57]">
+                    Chennai, India
+                  </span>
+                  .
+                </p>
+
+                <p className="mt-3 text-sm leading-6 text-slate-600">
+                  We also have services in{" "}
+                  <span className="font-semibold text-[#082B57]">
+                    Andhra Pradesh, Karnataka and Telangana
+                  </span>{" "}
+                  with the sole motto of providing excellent HVAC
+                  solutions to our clients with efficient planning,
+                  while implementing industry best practices at
+                  affordable prices.
+                </p>
+
+                <p className="mt-3 text-sm leading-6 text-slate-600">
+                  Mr. Nagaraj, a well-known personality in the HVAC
+                  field, brings more than{" "}
+                  <span className="font-bold text-[#082B57]">
+                    30 years of experience
+                  </span>
+                  . As Managing Director of ACME HVAC, he provides
+                  technical assistance and direction to achieve
+                  sustainable growth for the organization.
+                </p>
+              </div>
+
+              {/* =================================================
+                  DIRECTOR
+              ================================================= */}
+              <div
+                className="
+                  mt-5
+                  rounded-xl
+                  bg-slate-50
+                  p-4
+                "
+              >
+                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-green-600">
+                  Director
+                </p>
+
+                <p className="mt-1 text-sm font-black text-[#082B57]">
+                  MR. THAYALAN NAGAMUTHU
+                </p>
+
+                <p className="mt-0.5 text-xs font-medium text-slate-500">
+                  Director (Canada)
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* =================================================
               100% JOB GUARANTEE
-              COMES FROM RIGHT
           ================================================= */}
           <div className="overflow-hidden">
             <motion.div
@@ -261,13 +461,13 @@ export default function Hero() {
                 x: 0,
               }}
               transition={{
-                delay: 1.25,
+                delay: 1.6,
                 duration: 0.9,
                 ease: easeOut,
               }}
               className="
                 relative
-                mt-7
+                mt-6
                 inline-flex
                 items-center
                 gap-3
@@ -293,7 +493,7 @@ export default function Hero() {
                   x: "250%",
                 }}
                 transition={{
-                  delay: 2,
+                  delay: 2.1,
                   duration: 1.2,
                   ease: "easeInOut",
                 }}
@@ -320,7 +520,7 @@ export default function Hero() {
                   rotate: 0,
                 }}
                 transition={{
-                  delay: 1.7,
+                  delay: 1.95,
                   duration: 0.5,
                   ease: easeOut,
                 }}
@@ -335,6 +535,7 @@ export default function Hero() {
                   rounded-xl
                   bg-green-500
                   text-xl
+                  font-black
                   text-white
                   shadow-lg
                   shadow-green-500/30
@@ -343,51 +544,14 @@ export default function Hero() {
                 ✓
               </motion.div>
 
-              {/* Text */}
               <div className="relative">
-                <motion.div
-                  initial={{
-                    opacity: 0,
-                    x: 20,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    x: 0,
-                  }}
-                  transition={{
-                    delay: 1.55,
-                    duration: 0.5,
-                  }}
-                  className="
-                    text-lg
-                    font-black
-                    text-[#082B57]
-                    sm:text-xl
-                  "
-                >
+                <div className="text-lg font-black text-[#082B57] sm:text-xl">
                   100% Job Guarantee*
-                </motion.div>
+                </div>
 
-                <motion.div
-                  initial={{
-                    opacity: 0,
-                  }}
-                  animate={{
-                    opacity: 1,
-                  }}
-                  transition={{
-                    delay: 1.8,
-                    duration: 0.5,
-                  }}
-                  className="
-                    mt-0.5
-                    text-[11px]
-                    text-slate-500
-                    sm:text-xs
-                  "
-                >
+                <div className="mt-0.5 text-[11px] text-slate-500 sm:text-xs">
                   Terms & conditions apply
-                </motion.div>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -398,14 +562,14 @@ export default function Hero() {
           <motion.div
             initial={{
               opacity: 0,
-              y: 35,
+              y: 30,
             }}
             animate={{
               opacity: 1,
               y: 0,
             }}
             transition={{
-              delay: 1.8,
+              delay: 2,
               duration: 0.7,
               ease: easeOut,
             }}
@@ -486,7 +650,7 @@ export default function Hero() {
               y: 0,
             }}
             transition={{
-              delay: 2,
+              delay: 2.2,
               duration: 0.7,
             }}
             className="
@@ -534,7 +698,8 @@ export default function Hero() {
         </div>
 
         {/* =================================================
-            RIGHT CLIENT BANNER
+            RIGHT SIDE BANNER
+            EXISTING BANNER KEPT
         ================================================= */}
         <motion.div
           initial={{
@@ -557,6 +722,8 @@ export default function Hero() {
             mx-auto
             w-full
             max-w-xl
+            lg:sticky
+            lg:top-28
           "
         >
           {/* Glow */}
@@ -570,9 +737,7 @@ export default function Hero() {
             "
           />
 
-          {/* =================================================
-              BANNER
-          ================================================= */}
+          {/* Main Banner */}
           <motion.div
             animate={{
               y: [0, -6, 0],
@@ -596,15 +761,19 @@ export default function Hero() {
           >
             <div className="overflow-hidden rounded-[1.6rem]">
               <img
-                src="/rightside.jpeg"
+                src="/rightside1.png"
                 alt="ACME HVAC Skill and Placement 2026"
-                className="h-auto w-full object-cover"
+                className="
+                  h-auto
+                  w-full
+                  object-cover
+                "
               />
             </div>
           </motion.div>
 
           {/* =================================================
-              CAREER FOCUSED - LEFT CENTER
+              CAREER FOCUSED
           ================================================= */}
           <motion.div
             animate={{
@@ -643,7 +812,7 @@ export default function Hero() {
           </motion.div>
 
           {/* =================================================
-              OPEN FOR - RIGHT CENTER
+              OPEN FOR
           ================================================= */}
           <motion.div
             animate={{

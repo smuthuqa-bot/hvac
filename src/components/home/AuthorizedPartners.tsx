@@ -9,7 +9,7 @@ const partners = [
   },
   {
     name: "Samsung",
-    logo: "/company/samsung.jpeg",
+    logo: "/company/samsung1.jpg",
   },
   {
     name: "YORK",
@@ -45,7 +45,7 @@ export default function AuthorizedPartners() {
         {/* =====================================================
             HEADING
         ===================================================== */}
-        <div className="mb-8 text-center sm:mb-10">
+        <div className="mb-7 text-center sm:mb-9">
           <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-green-600 sm:text-xs">
             Authorized Training Partners
           </p>
@@ -58,8 +58,17 @@ export default function AuthorizedPartners() {
         {/* =====================================================
             LOGO SLIDER
         ===================================================== */}
-        <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl">
-
+        <div
+          className="
+            relative
+            mx-auto
+            max-w-6xl
+            overflow-hidden
+            rounded-3xl
+            py-3
+            sm:py-4
+          "
+        >
           {/* Left fade */}
           <div
             className="
@@ -98,7 +107,7 @@ export default function AuthorizedPartners() {
               SLIDER
           ================================================= */}
           <motion.div
-            className="flex"
+            className="flex items-center"
             animate={{
               x: ["0%", "-100%"],
             }}
@@ -108,7 +117,6 @@ export default function AuthorizedPartners() {
               repeat: Infinity,
             }}
           >
-
             {/* =================================================
                 FIRST SET
             ================================================= */}
@@ -137,7 +145,7 @@ export default function AuthorizedPartners() {
                   className="
                     relative
                     flex
-                    h-56
+                    h-52
                     w-full
                     items-center
                     justify-center
@@ -146,12 +154,15 @@ export default function AuthorizedPartners() {
                     border
                     border-slate-200
                     bg-white
+                    p-5
                     shadow-md
                     transition-shadow
                     duration-300
                     hover:shadow-xl
-                    sm:h-64
-                    lg:h-72
+                    sm:h-60
+                    sm:p-6
+                    lg:h-64
+                    lg:p-7
                   "
                 >
                   <img
@@ -159,8 +170,8 @@ export default function AuthorizedPartners() {
                     alt={`${partner.name} logo`}
                     className="
                       block
-                      h-[92%]
-                      w-[92%]
+                      max-h-full
+                      max-w-full
                       object-contain
                     "
                   />
@@ -190,7 +201,7 @@ export default function AuthorizedPartners() {
                   className="
                     relative
                     flex
-                    h-56
+                    h-52
                     w-full
                     items-center
                     justify-center
@@ -199,9 +210,12 @@ export default function AuthorizedPartners() {
                     border
                     border-slate-200
                     bg-white
+                    p-5
                     shadow-md
-                    sm:h-64
-                    lg:h-72
+                    sm:h-60
+                    sm:p-6
+                    lg:h-64
+                    lg:p-7
                   "
                 >
                   <img
@@ -209,8 +223,8 @@ export default function AuthorizedPartners() {
                     alt={`${partner.name} logo`}
                     className="
                       block
-                      h-[92%]
-                      w-[92%]
+                      max-h-full
+                      max-w-full
                       object-contain
                     "
                   />

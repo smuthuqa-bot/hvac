@@ -6,30 +6,23 @@ const contactDetails = [
   {
     icon: "📍",
     label: "Chennai Office",
-    title: "ACME HVAC PVT LTD",
+    title: "ACME SKILL DEVELOPMENT CENTRE",
     description:
-      "Door No: 1/448A, Ground Floor, Karthikeyapuram 3rd Street, Madipakkam, Chennai - 600091.",
-  },
-  {
-    icon: "☎",
-    label: "Office",
-    title: "+91 44 42627634",
-    description: "Connect with our ACME HVAC office team.",
-    href: "tel:+914442627634",
+      "1/448, Karthikeyapuram 3rd Street, Madipakkam, Chennai - 600091.",
   },
   {
     icon: "📱",
     label: "Mobile",
-    title: "+91 9840962832",
-    description: "+91 9080000140",
-    href: "tel:+919840962832",
+    title: "+91 9150060340",
+    description: "+91 9150060340 / +91 9150060388",
+    href: "tel:+919150060340",
   },
   {
     icon: "✉",
     label: "Email",
-    title: "contact@acmehvac.co.in",
-    description: "info@acmehvac.co.in",
-    href: "mailto:contact@acmehvac.co.in",
+    title: "info@acmesdc.com",
+    description: "info@acmesdc.com",
+    href: "mailto:info@acmesdc.com",
   },
 ];
 
@@ -198,10 +191,9 @@ export default function Contact() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="relative min-h-[420px] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.06] shadow-2xl backdrop-blur-xl sm:min-h-[500px]"
           >
-            {/* Map */}
             <iframe
-              title="ACME HVAC Chennai Location"
-              src="https://www.google.com/maps?q=ACME%20HVAC%20Madipakkam%20Chennai&output=embed"
+              title="ACME Skill Development Centre Chennai Location"
+              src="https://www.google.com/maps?q=1/448%20Karthikeyapuram%203rd%20Street%20Madipakkam%20Chennai%20600091&output=embed"
               className="absolute inset-0 h-full w-full border-0 opacity-90"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -223,7 +215,7 @@ export default function Contact() {
                   </p>
 
                   <p className="mt-1 text-xs leading-5 text-slate-300">
-                    Karthikeyapuram 3rd Street,
+                    1/448, Karthikeyapuram 3rd Street,
                     <br />
                     Madipakkam, Chennai - 600091
                   </p>
@@ -241,7 +233,6 @@ export default function Contact() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="relative mt-8 overflow-hidden rounded-[2rem] border border-green-400/10 bg-gradient-to-r from-[#082B57] to-[#0a315f] px-5 py-8 text-center shadow-2xl sm:px-8 sm:py-10"
         >
-          {/* Glow */}
           <div className="pointer-events-none absolute left-1/2 top-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-green-500/10 blur-3xl" />
 
           <div className="relative">
@@ -260,12 +251,8 @@ export default function Contact() {
 
             <motion.a
               href="#register"
-              whileHover={{
-                scale: 1.04,
-              }}
-              whileTap={{
-                scale: 0.97,
-              }}
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
               className="mt-6 inline-flex rounded-full bg-[#65C943] px-7 py-3.5 text-sm font-black text-white shadow-lg shadow-green-500/20 transition hover:bg-[#72d952]"
             >
               Register Now →
