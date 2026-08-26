@@ -5,14 +5,14 @@ import { motion } from "framer-motion";
 
 const trainingImages = [
   {
-    src: "/training/owner.jpeg",
-    title: "Founder & Director of ACME HVAC",
-    description: "Hands-on learning with real HVAC equipment.",
+    src: "/training/award.jpeg",
+    title: "Indian Industrial Icon Award by FTDF",
+    description: "An initiative by FTDF to recognize.",
     featured: true,
   },
   {
-    src: "/training/award.jpeg",
-    title: "Industrial Icon of India Award by FTDF",
+    src: "/training/tra9.jpg",
+    title: "Indian Industrial Icon Award by FTDF",
     description: "An initiative by FTDF to recognize",
   },
   {
