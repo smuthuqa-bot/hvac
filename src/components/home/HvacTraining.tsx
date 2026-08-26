@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const trainingImages = [
   {
-    src: "/training/award.jpeg",
+    src: "/training/award3.jpeg",
     title: "Indian Industrial Icon Award by FTDF",
     description: "An initiative by FTDF to recognize.",
     featured: true,
