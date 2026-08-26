@@ -21,12 +21,12 @@ const trainingImages = [
     description: "Industry-focused technical sessions.",
   },
   {
-    src: "/training/tra1.jpg",
+    src: "/training/tra7.jpeg",
     title: "Hands-on Practice",
     description: "Practice with real equipment.",
   },
   {
-    src: "/training/tra3.jpg",
+    src: "/training/tra8.jpeg",
     title: "Industry Skills",
     description: "Build practical workplace skills.",
   },
