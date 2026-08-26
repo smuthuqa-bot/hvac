@@ -72,9 +72,7 @@ export default function Registration() {
   try {
     setLoading(true);
 
-    const response = await fetch(
-      "http://localhost:5005/api/registrations",
-      {
+    const response = await fetch("/api/registrations", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

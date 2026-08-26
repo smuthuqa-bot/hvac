@@ -1,0 +1,29 @@
+[
+  {
+    "id": "REG-20260826-001",
+    "name": "Muthu",
+    "email": "test@gmail.com",
+    "mobile": "8797654567",
+    "qualification": "BE",
+    "address": "chenaii,chenksdkd, dsjhfsdjhj ,600024",
+    "registeredAt": "2026-08-26T02:25:48.830Z"
+  },
+  {
+    "id": "REG-20260826-002",
+    "name": "Raja",
+    "email": "raja@gmail.com",
+    "mobile": "9876789876",
+    "qualification": "Diploma",
+    "address": "test rajashed kodadappakam",
+    "registeredAt": "2026-08-26T02:27:28.581Z"
+  },
+  {
+    "id": "REG-20260826-003",
+    "name": "siva",
+    "email": "siva@gmail.com",
+    "mobile": "8767876787",
+    "qualification": "Graduate",
+    "address": "kodapakkam",
+    "registeredAt": "2026-08-26T02:41:40.071Z"
+  }
+]
