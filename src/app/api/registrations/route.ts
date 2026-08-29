@@ -10,6 +10,7 @@ type Registration = {
   qualification: string;
   address: string;
   registeredAt: string;
+  age?: string; // Optional age field
 };
 
 export async function POST(request: Request) {
@@ -22,14 +23,15 @@ export async function POST(request: Request) {
       mobile,
       qualification,
       address,
+      age, // Capture the age field
     } = body;
 
     // Basic validation
-    if (!name || !email || !mobile || !address) {
+    if (!name || !email || !mobile || !address || !age) {
       return NextResponse.json(
         {
           success: false,
-          message: "Name, email, mobile and address are required.",
+          message: "Name, email, mobile, address and age are required.",
         },
         { status: 400 }
       );
@@ -82,6 +84,7 @@ export async function POST(request: Request) {
       id: registrationNumber,
       name: name.trim(),
       email: email.trim(),
+      age: age.trim(), // Store the age field
       mobile: mobile.trim(),
       qualification: qualification?.trim() || "",
       address: address.trim(),

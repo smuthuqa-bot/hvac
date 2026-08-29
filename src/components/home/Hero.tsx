@@ -344,7 +344,7 @@ export default function Hero() {
                 </p>
 
                 <p className="mt-1 text-[9px] font-bold uppercase tracking-wider text-green-300">
-                  Years Experience
+                  Years Experience in HAVC Engineering
                 </p>
               </motion.div>
             </div>
@@ -772,87 +772,7 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* =================================================
-              CAREER FOCUSED
-          ================================================= */}
-          <motion.div
-            animate={{
-              y: [0, -6, 0],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="
-              absolute
-              left-[20px]
-              top-[40%]
-              z-20
-              -translate-y-1/2
-              rounded-2xl
-              border
-              border-green-100
-              bg-white
-              px-4
-              py-3
-              shadow-xl
-              sm:left-[-24px]
-              sm:px-5
-              sm:py-4
-            "
-          >
-            <div className="text-[10px] font-bold uppercase tracking-wider text-green-600">
-              Career Focused
-            </div>
-
-            <div className="mt-1 text-sm font-black text-[#082B57] sm:text-base">
-              Skill → Experience → Career
-            </div>
-          </motion.div>
-
-          {/* =================================================
-              OPEN FOR
-          ================================================= */}
-          <motion.div
-            animate={{
-              y: [0, 6, 0],
-            }}
-            transition={{
-              duration: 4.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="
-              absolute
-              right-[-10px]
-              top-[38%]
-              z-20
-              -translate-y-1/2
-              rounded-2xl
-              border
-              border-green-100
-              bg-white
-              px-4
-              py-3
-              shadow-xl
-              sm:right-[-24px]
-              sm:px-5
-              sm:py-4
-            "
-          >
-            <div className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
-              Open For
-            </div>
-
-            <div className="mt-1 text-sm font-black text-[#082B57]">
-              Women & Men
-            </div>
-
-            <div className="mt-0.5 text-[10px] font-semibold text-green-600">
-              Age 18–35
-            </div>
-          </motion.div>
+          
         </motion.div>
       </div>
 

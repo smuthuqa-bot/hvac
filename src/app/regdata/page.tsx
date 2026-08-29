@@ -10,6 +10,7 @@ type Registration = {
   qualification: string;
   address: string;
   registeredAt: string;
+  age?: string; // Optional age field
 };
 
 type RegistrationDay = {
@@ -107,7 +108,7 @@ export default function RegistrationDataPage() {
             .includes(searchText) ||
           registration.address
             .toLowerCase()
-            .includes(searchText)
+            .includes(searchText) 
         );
       }
     ) || [];
@@ -417,6 +418,10 @@ export default function RegistrationDataPage() {
                     </th>
 
                     <th className="px-5 py-4 text-xs font-bold uppercase tracking-wider text-slate-400">
+                      Age
+                    </th>
+
+                    <th className="px-5 py-4 text-xs font-bold uppercase tracking-wider text-slate-400">
                       Qualification
                     </th>
 
@@ -460,6 +465,10 @@ export default function RegistrationDataPage() {
                         {/* Mobile */}
                         <td className="whitespace-nowrap px-5 py-4 text-sm font-semibold text-slate-700">
                           {registration.mobile}
+                        </td>
+
+                        <td className="whitespace-nowrap px-5 py-4 text-sm font-semibold text-slate-700">
+                          {registration.age || "-"}
                         </td>
 
                         {/* Qualification */}

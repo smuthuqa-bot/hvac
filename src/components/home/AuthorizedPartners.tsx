@@ -8,6 +8,10 @@ const partners = [
     logo: "/company/daikin.jpeg",
   },
   {
+    name: "Voltas",
+    logo: "/company/voltas.jpg",
+  },
+  {
     name: "Samsung",
     logo: "/company/samsung1.jpg",
   },
@@ -21,7 +25,7 @@ const partners = [
   },
   {
     name: "Trane",
-    logo: "/company/trane.jpeg",
+    logo: "/company/trane.jpg",
   },
   {
     name: "Carrier",
@@ -51,12 +55,12 @@ export default function AuthorizedPartners() {
           </p>
 
           <h2 className="mt-2 text-lg font-black text-slate-900 sm:text-xl">
-            Trained with Industry-Leading Brands
+            Hands on training on leading brands
           </h2>
         </div>
 
         {/* =====================================================
-            LOGO SLIDER
+            SLIDER VIEWPORT
         ===================================================== */}
         <div
           className="
@@ -69,7 +73,9 @@ export default function AuthorizedPartners() {
             sm:py-4
           "
         >
-          {/* Left fade */}
+          {/* =================================================
+              LEFT FADE
+          ================================================= */}
           <div
             className="
               pointer-events-none
@@ -78,15 +84,17 @@ export default function AuthorizedPartners() {
               top-0
               z-20
               h-full
-              w-8
+              w-10
               bg-gradient-to-r
               from-white
               to-transparent
-              sm:w-14
+              sm:w-16
             "
           />
 
-          {/* Right fade */}
+          {/* =================================================
+              RIGHT FADE
+          ================================================= */}
           <div
             className="
               pointer-events-none
@@ -95,49 +103,52 @@ export default function AuthorizedPartners() {
               top-0
               z-20
               h-full
-              w-8
+              w-10
               bg-gradient-to-l
               from-white
               to-transparent
-              sm:w-14
+              sm:w-16
             "
           />
 
           {/* =================================================
-              SLIDER
+              CONTINUOUS TRACK
           ================================================= */}
           <motion.div
-            className="flex items-center"
+            className="flex w-max items-center"
             animate={{
-              x: ["0%", "-100%"],
+              x: ["0%", "-50%"],
             }}
             transition={{
               duration: 18,
               ease: "linear",
               repeat: Infinity,
+              repeatType: "loop",
             }}
           >
             {/* =================================================
-                FIRST SET
+                FIRST SET - ALL 7
             ================================================= */}
             {partners.map((partner) => (
               <div
                 key={partner.name}
                 className="
                   flex
-                  min-w-full
+                  w-[85vw]
+                  shrink-0
                   items-center
                   justify-center
                   px-2
-                  sm:min-w-[50%]
+                  sm:w-[50vw]
                   sm:px-3
-                  lg:min-w-[33.333%]
+                  lg:w-[33.333vw]
+                  lg:max-w-[400px]
                   lg:px-4
                 "
               >
                 <motion.div
                   whileHover={{
-                    scale: 1.02,
+                    scale: 1.03,
                   }}
                   transition={{
                     duration: 0.25,
@@ -180,24 +191,33 @@ export default function AuthorizedPartners() {
             ))}
 
             {/* =================================================
-                DUPLICATE SET
+                DUPLICATE SET - ALL 7
+                Required for seamless looping
             ================================================= */}
             {partners.map((partner) => (
               <div
                 key={`duplicate-${partner.name}`}
                 className="
                   flex
-                  min-w-full
+                  w-[85vw]
+                  shrink-0
                   items-center
                   justify-center
                   px-2
-                  sm:min-w-[50%]
+                  sm:w-[50vw]
                   sm:px-3
-                  lg:min-w-[33.333%]
+                  lg:w-[33.333vw]
+                  lg:max-w-[400px]
                   lg:px-4
                 "
               >
-                <div
+                <motion.div
+                  whileHover={{
+                    scale: 1.03,
+                  }}
+                  transition={{
+                    duration: 0.25,
+                  }}
                   className="
                     relative
                     flex
@@ -212,6 +232,9 @@ export default function AuthorizedPartners() {
                     bg-white
                     p-5
                     shadow-md
+                    transition-shadow
+                    duration-300
+                    hover:shadow-xl
                     sm:h-60
                     sm:p-6
                     lg:h-64
@@ -228,7 +251,7 @@ export default function AuthorizedPartners() {
                       object-contain
                     "
                   />
-                </div>
+                </motion.div>
               </div>
             ))}
           </motion.div>

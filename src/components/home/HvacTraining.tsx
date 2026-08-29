@@ -6,29 +6,19 @@ import { motion } from "framer-motion";
 const trainingImages = [
   {
     src: "/training/award3.jpeg",
-    title: "Indian Industrial Icon Award by FTDF",
-    description: "An initiative by FTDF to recognize.",
+    title: "Indian Industrial Icon Award 2026 by FTDF",
+    description: "An initiative by FTDF to recognize excellence in the industrial sector.",
     featured: true,
   },
   {
     src: "/training/tra9.jpg",
-    title: "Indian Industrial Icon Award by FTDF",
-    description: "An initiative by FTDF to recognize",
+    title: "Indian Industrial Icon Award 2026 by FTDF",
+    description: "Recognizing excellence and contribution to the industry.",
   },
   {
-    src: "/training/tra2.jpg",
-    title: "Technical Training",
-    description: "Industry-focused technical sessions.",
-  },
-  {
-    src: "/training/tra7.jpeg",
-    title: "Hands-on Practice",
-    description: "Practice with real equipment.",
-  },
-  {
-    src: "/training/tra8.jpeg",
-    title: "Industry Skills",
-    description: "Build practical workplace skills.",
+    src: "/training/certificate.jpeg",
+    title: "Award Certificate",
+    description: "Certificate of recognition presented to ACME HVAC.",
   },
 ];
 
@@ -44,6 +34,7 @@ export default function HvacTraining() {
       <div className="absolute -right-40 bottom-0 h-[500px] w-[500px] rounded-full bg-blue-100/40 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -54,26 +45,25 @@ export default function HvacTraining() {
         >
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-green-200 bg-green-50 px-4 py-2 text-sm font-semibold text-green-700">
             <span className="h-2 w-2 animate-pulse rounded-full bg-green-500" />
-            HVAC Training
+            HVAC Award Recognition
           </div>
 
           <h2 className="text-4xl font-black tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
-            Learn By Doing.
+            Celebrate Excellence.
             <span className="block text-green-600">
-              Build Your Future.
+              Recognize Achievement.
             </span>
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-500 sm:text-lg">
-            Get practical exposure, technical knowledge and
-            industry-focused HVAC training designed to prepare
-            you for your career.
+           ACME HVAC is proud to be recognized for its contribution to the HVAC industry, receiving the Indian Industrial Icon Award by FTDF.
           </p>
         </motion.div>
 
         {/* Gallery */}
         <div className="mt-12 grid gap-4 lg:grid-cols-12 lg:grid-rows-2">
-          {/* Featured image */}
+
+          {/* Featured Award */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -93,9 +83,9 @@ export default function HvacTraining() {
             {/* Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#061A33]/90 via-[#061A33]/20 to-transparent" />
 
-            {/* Featured badge */}
+            {/* Badge */}
             <div className="absolute left-5 top-5 rounded-full border border-white/20 bg-black/20 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white backdrop-blur-md">
-              Featured Training
+              Featured Award
             </div>
 
             {/* Content */}
@@ -114,61 +104,117 @@ export default function HvacTraining() {
             </div>
           </motion.div>
 
-          {/* Smaller images */}
-          {trainingImages.slice(1).map((image, index) => (
-            <motion.div
-              key={image.src}
-              initial={{
-                opacity: 0,
-                y: 30,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-                amount: 0.2,
-              }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.1,
-              }}
-              className="group relative min-h-[250px] overflow-hidden rounded-[1.5rem] bg-slate-900 sm:min-h-[280px] lg:col-span-5"
+          {/* Award Photo */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+            className="group relative min-h-[250px] overflow-hidden rounded-[1.5rem] bg-slate-900 sm:min-h-[280px] lg:col-span-5"
+          >
+            <Image
+              src={trainingImages[1].src}
+              alt={trainingImages[1].title}
+              fill
+              sizes="(max-width: 1024px) 100vw, 42vw"
+              className="object-cover transition duration-700 group-hover:scale-110"
+            />
+
+            <div className="absolute inset-0 bg-gradient-to-t from-[#061A33]/90 via-transparent to-transparent opacity-80 transition duration-300 group-hover:opacity-100" />
+
+            <div className="absolute bottom-0 left-0 right-0 p-5">
+              <p className="text-xs font-bold uppercase tracking-wider text-green-400">
+                ACME HVAC
+              </p>
+
+              <h3 className="mt-1 text-lg font-black text-white">
+                {trainingImages[1].title}
+              </h3>
+
+              <p className="mt-1 text-xs leading-5 text-slate-200">
+                {trainingImages[1].description}
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Award Video */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="group relative min-h-[250px] overflow-hidden rounded-[1.5rem] bg-slate-900 sm:min-h-[280px] lg:col-span-5"
+          >
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
             >
-              <Image
-                src={image.src}
-                alt={image.title}
-                fill
-                sizes="(max-width: 1024px) 100vw, 42vw"
-                className="object-cover transition duration-700 group-hover:scale-110"
-              />
+              <source src="/training/award.mp4" type="video/mp4" />
+            </video>
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#061A33]/90 via-transparent to-transparent opacity-80 transition duration-300 group-hover:opacity-100" />
+            {/* Video overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#061A33]/90 via-[#061A33]/20 to-transparent" />
 
-              {/* Hover icon */}
-              <div className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white opacity-0 backdrop-blur-md transition-all duration-300 group-hover:opacity-100">
-                ↗
-              </div>
+            {/* Playing indicator */}
+            <div className="absolute left-4 top-4 flex items-center gap-2 rounded-full border border-white/20 bg-black/30 px-3 py-2 text-xs font-bold text-white backdrop-blur-md">
+              <span className="h-2 w-2 animate-pulse rounded-full bg-green-400" />
+              Award Highlights
+            </div>
 
-              {/* Content */}
-              <div className="absolute bottom-0 left-0 right-0 p-5">
-                <p className="text-xs font-bold uppercase tracking-wider text-green-400">
-                  ACME HVAC
-                </p>
+            {/* Video content */}
+            <div className="absolute bottom-0 left-0 right-0 p-5">
+              <p className="text-xs font-bold uppercase tracking-wider text-green-400">
+                ACME HVAC
+              </p>
 
-                <h3 className="mt-1 text-lg font-black text-white">
-                  {image.title}
-                </h3>
+              <h3 className="mt-1 text-lg font-black text-white">
+                Indian Industrial Icon Award
+              </h3>
 
-                <p className="mt-1 text-xs leading-5 text-slate-200">
-                  {image.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+              <p className="mt-1 text-xs leading-5 text-slate-200">
+                Highlights from the award recognition.
+              </p>
+            </div>
+          </motion.div>
+
         </div>
+
+        {/* Certificate */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="group relative mt-4 overflow-hidden rounded-[1.5rem] bg-white shadow-lg"
+        >
+          <div className="relative min-h-[300px] w-full sm:min-h-[400px]">
+            <Image
+              src={trainingImages[2].src}
+              alt={trainingImages[2].title}
+              fill
+              sizes="100vw"
+              className="object-contain p-4 transition duration-700 group-hover:scale-[1.02] sm:p-8"
+            />
+          </div>
+
+          <div className="border-t border-slate-100 px-6 py-5 text-center">
+            <p className="text-xs font-bold uppercase tracking-wider text-green-600">
+              Recognition
+            </p>
+
+            <h3 className="mt-1 text-xl font-black text-slate-900">
+              {trainingImages[2].title}
+            </h3>
+
+            <p className="mt-1 text-sm text-slate-500">
+              {trainingImages[2].description}
+            </p>
+          </div>
+        </motion.div>
 
         {/* Bottom CTA */}
         <motion.div
@@ -205,6 +251,7 @@ export default function HvacTraining() {
             Register Now →
           </a>
         </motion.div>
+
       </div>
     </section>
   );

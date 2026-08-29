@@ -7,6 +7,7 @@ type FormData = {
   name: string;
   email: string;
   mobile: string;
+  age: string;
   qualification: string;
   address: string;
 };
@@ -15,6 +16,7 @@ const initialForm: FormData = {
   name: "",
   email: "",
   mobile: "",
+  age: "",
   qualification: "",
   address: "",
 };
@@ -51,6 +53,10 @@ export default function Registration() {
 
   if (!form.name.trim()) {
     setError("Please enter your name.");
+    return;
+  }
+  if (!form.age.trim()) {
+    setError("Please enter your age.");
     return;
   }
 
@@ -184,47 +190,76 @@ export default function Registration() {
               {/* Left panel */}
 
               <div className="relative overflow-hidden bg-[#082B57] p-8 text-white sm:p-10 lg:p-12">
-                <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full border-[50px] border-green-500/10" />
+  <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full border-[50px] border-green-500/10" />
 
-                <div className="absolute -bottom-32 -left-24 h-80 w-80 rounded-full border-[50px] border-green-500/10" />
+  <div className="absolute -bottom-32 -left-24 h-80 w-80 rounded-full border-[50px] border-green-500/10" />
 
-                <div className="relative">
-                  <p className="text-sm font-bold uppercase tracking-[0.25em] text-green-400">
-                    Take the first step
-                  </p>
+  <div className="relative">
+    <p className="text-sm font-bold uppercase tracking-[0.25em] text-green-400">
+      Skill Development Programme
+    </p>
 
-                  <h3 className="mt-5 text-3xl font-black leading-tight sm:text-4xl">
-                    Your future in HVAC starts here.
-                  </h3>
+    <h3 className="mt-5 text-3xl font-black leading-tight sm:text-4xl">
+      Build your skills.
+      <span className="block text-green-400">
+        Shape your future.
+      </span>
+    </h3>
 
-                  <p className="mt-5 text-sm leading-7 text-slate-300">
-                    Tell us a little about yourself. Our team
-                    will get in touch with you about the next steps.
-                  </p>
+    {/* Documents Required */}
+    <div className="mt-10 border-t border-white/15 pt-7">
+      <h4 className="text-base font-bold text-white">
+        Note: Kindly bring these documents during admission.
+      </h4>
 
-                  <div className="mt-10 space-y-5">
-                    {[
-                      "Industry-focused skill training",
-                      "Certification opportunities",
-                      "Practical internship experience",
-                      "Career opportunities",
-                    ].map((item) => (
-                      <div
-                        key={item}
-                        className="flex items-center gap-3"
-                      >
-                        <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-green-500 text-xs font-black">
-                          ✓
-                        </div>
+      <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-300">
+        <li>
+          • Xerox copies of Aadhaar card, SSLC, HSC, Degree
+        </li>
 
-                        <span className="text-sm text-slate-200">
-                          {item}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+        <li>
+          • <span className="font-bold text-white">
+              Original Copy of any 1 educational certificate
+            </span>
+        </li>
+
+        <li>
+          • 2 passport size photos
+        </li>
+
+        <li>
+          • Xerox copy of Bank account passbook
+        </li>
+      </ul>
+
+      <h4 className="mt-7 text-base font-bold text-white">
+        குறிப்பு:
+      </h4>
+
+      <p className="mt-2 text-sm leading-6 text-slate-300">
+        சேர்க்கையின் போது இந்த ஆவணங்களை தயவுசெய்து கொண்டு வாருங்கள்.
+      </p>
+
+      <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-300">
+        <li>
+          • ஆதார் அட்டையின் ஜெராக்ஸ் பிரதிகள், SSLC, HSC, பட்டம்
+        </li>
+
+        <li>
+          • ஏதேனும் 1 கல்விச் சான்றிதழின் அசல் நகல்
+        </li>
+
+        <li>
+          • 2 passport அளவு புகைப்படங்கள்
+        </li>
+
+        <li>
+          • வங்கி கணக்கு பாஸ்புக்கின் ஜெராக்ஸ் நகல்
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
               {/* Right form */}
 
@@ -240,26 +275,68 @@ export default function Registration() {
                   >
                     {/* Name + Mobile */}
 
-                    <div className="grid gap-6 sm:grid-cols-2">
-                      <Input
-                        label="Full Name"
-                        name="name"
-                        placeholder="Enter your full name"
-                        value={form.name}
-                        onChange={handleChange}
-                        required
-                      />
+                    {/* Name + Mobile */}
 
-                      <Input
-                        label="Mobile Number"
-                        name="mobile"
-                        type="tel"
-                        placeholder="Enter mobile number"
-                        value={form.mobile}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
+              <div className="grid gap-6 sm:grid-cols-2">
+                <Input
+                  label="Full Name"
+                  name="name"
+                  placeholder="Enter your full name"
+                  value={form.name}
+                  onChange={handleChange}
+                  required
+                />
+
+                <Input
+                  label="Mobile Number"
+                  name="mobile"
+                  type="tel"
+                  placeholder="Enter mobile number"
+                  value={form.mobile}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              {/* Age + Qualification */}
+
+              <div className="grid gap-6 sm:grid-cols-2">
+                <Input
+                  label="Age"
+                  name="age"
+                  type="number"
+                  placeholder="Enter your age"
+                  value={form.age}
+                  onChange={handleChange}
+                  required
+                />
+
+                <div>
+                  <label
+                    htmlFor="qualification"
+                    className="mb-2 block text-sm font-bold text-slate-800"
+                  >
+                    Qualification
+                  </label>
+
+                  <select
+                    id="qualification"
+                    name="qualification"
+                    value={form.qualification}
+                    onChange={handleChange}
+                    className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-sm text-slate-900 outline-none transition focus:border-green-500 focus:ring-4 focus:ring-green-500/10"
+                  >
+                    <option value="">Select qualification</option>
+                    <option value="10th">10th</option>
+                    <option value="ITI">ITI</option>
+                    <option value="Diploma">Diploma</option>
+                    <option value="Arts and Science">Arts and Science</option>
+                    <option value="Degree">Degree</option>
+                    <option value="Graduate">Graduate</option>
+                    <option value="Master Graduate">Master Graduate</option>
+                  </select>
+                </div>
+              </div>
 
                     {/* Email + Qualification */}
 
@@ -274,46 +351,6 @@ export default function Registration() {
                         required
                       />
 
-                      <div>
-                        <label
-                          htmlFor="qualification"
-                          className="mb-2 block text-sm font-bold text-slate-800"
-                        >
-                          Qualification
-                        </label>
-
-                        <select
-                          id="qualification"
-                          name="qualification"
-                          value={form.qualification}
-                          onChange={handleChange}
-                          className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-sm text-slate-900 outline-none transition focus:border-green-500 focus:ring-4 focus:ring-green-500/10"
-                        >
-                          <option value="">
-                            Select qualification
-                          </option>
-
-                          <option value="10th">
-                            10th
-                          </option>
-
-                          <option value="ITI">
-                            ITI
-                          </option>
-
-                          <option value="Diploma">
-                            Diploma
-                          </option>
-
-                          <option value="BE">
-                            BE
-                          </option>
-
-                          <option value="Graduate">
-                            Graduate
-                          </option>
-                        </select>
-                      </div>
                     </div>
 
                     {/* Address */}

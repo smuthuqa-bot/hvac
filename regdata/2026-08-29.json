@@ -1,0 +1,40 @@
+[
+  {
+    "id": "REG-20260829-001",
+    "name": "Muthu",
+    "email": "test@gmail.com",
+    "mobile": "9879879878",
+    "qualification": "Diploma",
+    "address": "chennai",
+    "registeredAt": "2026-08-29T07:33:22.259Z"
+  },
+  {
+    "id": "REG-20260829-002",
+    "name": "test",
+    "email": "test@gmail.com",
+    "mobile": "9878978878",
+    "qualification": "Degree",
+    "address": "chennai",
+    "registeredAt": "2026-08-29T07:47:49.182Z"
+  },
+  {
+    "id": "REG-20260829-003",
+    "name": "sdddf",
+    "email": "sdds@gmail.com",
+    "mobile": "dsdsdsd",
+    "qualification": "Diploma",
+    "address": "sddssdddsds",
+    "registeredAt": "2026-08-29T07:49:29.570Z",
+    "age": "25"
+  },
+  {
+    "id": "REG-20260829-004",
+    "name": "dffgddf",
+    "email": "dffd@gmail.com",
+    "age": "22",
+    "mobile": "8789798734",
+    "qualification": "Degree",
+    "address": "chennai",
+    "registeredAt": "2026-08-29T07:53:22.229Z"
+  }
+]
