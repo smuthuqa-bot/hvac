@@ -9,12 +9,14 @@ import Footer from "@/components/home/Footer";
 import AuthorizedPartners from "@/components/home/AuthorizedPartners";
 import Contact from "@/components/home/Contact";
 import SkillDevelopmentClasses from "@/components/home/SkillDevelopmentClasses";
+import FounderChairman from "@/components/home/FounderChairman";
 
 export default function Home() {
   return (
     <>
       <main className="space-y-8 sm:space-y-10 lg:space-y-12">
         <Hero />
+        <FounderChairman />
         <AuthorizedPartners />
         <Benefits />
         <SkillDevelopmentClasses />
