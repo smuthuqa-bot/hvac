@@ -1,0 +1,32 @@
+[
+  {
+    "id": "ENQ-20260916-001",
+    "companyName": "ABC Engineering",
+    "gstin": "GFHFGHFHHGH",
+    "address": "chennai",
+    "employeesRequired": 10,
+    "employmentType": "Permanent",
+    "temporaryDuration": null,
+    "enquiredAt": "2026-09-16T02:30:08.669Z"
+  },
+  {
+    "id": "ENQ-20260916-002",
+    "companyName": "test company",
+    "gstin": "JSHGJGJGFDHHJGF",
+    "address": "slelam",
+    "employeesRequired": 10,
+    "employmentType": "Temporary",
+    "temporaryDuration": "6 month",
+    "enquiredAt": "2026-09-16T02:31:05.000Z"
+  },
+  {
+    "id": "ENQ-20260916-003",
+    "companyName": "test company",
+    "gstin": "DSHBGFDHJFD",
+    "address": "madurai",
+    "employeesRequired": 10,
+    "employmentType": "Permanent",
+    "temporaryDuration": null,
+    "enquiredAt": "2026-09-16T03:08:14.494Z"
+  }
+]

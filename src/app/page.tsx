@@ -10,6 +10,7 @@ import AuthorizedPartners from "@/components/home/AuthorizedPartners";
 import Contact from "@/components/home/Contact";
 import SkillDevelopmentClasses from "@/components/home/SkillDevelopmentClasses";
 import FounderChairman from "@/components/home/FounderChairman";
+import CorporateInquiry from "@/components/home/CorporateInquiry";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
         <Eligibility />
         <FAQ />
         <Contact />
+        <CorporateInquiry />
         <Registration />
       </main>
 
