@@ -73,7 +73,7 @@ export default function Footer() {
                 "
               >
                 <img
-                  src="/tnskill-logo.jpeg"
+                  src="/tnskill-logo.png"
                   alt="TN Skill"
                   className="h-full w-full object-contain"
                 />

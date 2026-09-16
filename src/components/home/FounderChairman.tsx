@@ -7,13 +7,13 @@ const easeOut = [0.22, 1, 0.36, 1] as const;
 
 const management = [
   {
-    role: "Managing Director",
+    role: "Founder / Chairman",
     name: "Mr. Nagaraj G.",
     location: "",
     initials: "NG",
   },
   {
-    role: "Director",
+    role: "Partner",
     name: "Mr. Thayalan Nagamuthu",
     location: "Canada",
     initials: "TN",
@@ -171,7 +171,7 @@ export default function FounderChairman() {
           >
             The Vision Behind
             <span className="block text-green-600">
-              ACME HVAC
+              ACMESDC
             </span>
           </h2>
 
@@ -187,7 +187,7 @@ export default function FounderChairman() {
             "
           >
             Experience, technical expertise and professional
-            leadership driving ACME HVAC towards sustainable growth.
+            leadership driving ACME SDC towards sustainable growth.
           </p>
         </motion.div>
 
@@ -361,7 +361,7 @@ export default function FounderChairman() {
                       text-green-400
                     "
                   >
-                    ACME HVAC
+                    ACME SDC
                   </p>
 
                   <p
@@ -493,7 +493,7 @@ export default function FounderChairman() {
                       sm:text-[9px]
                     "
                   >
-                    Managing Director
+                    Founder / Chairman
                   </p>
 
                   <p
@@ -510,7 +510,7 @@ export default function FounderChairman() {
                   </p>
                 </motion.div>
 
-                {/* Director */}
+                {/* Partner */}
 
                 <motion.div
                   initial={{
@@ -557,7 +557,7 @@ export default function FounderChairman() {
                       sm:text-[9px]
                     "
                   >
-                    Director
+                    Partner
                   </p>
 
                   <p
@@ -988,8 +988,8 @@ export default function FounderChairman() {
 
                 <p>
                   With a strong focus on technical excellence and
-                  customer satisfaction, ACME HVAC continues to
-                  build long-term value through reliable HVAC
+                  customer satisfaction, ACME SDC continues to
+                  build long-term value through reliable SDC
                   solutions and professional project execution.
                 </p>
 

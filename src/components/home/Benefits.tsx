@@ -87,7 +87,7 @@ export default function Benefits() {
         >
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-green-200 bg-green-50 px-3.5 py-2 text-xs font-semibold text-green-700 sm:px-4 sm:text-sm">
             <span className="h-2 w-2 rounded-full bg-green-500" />
-            Why Choose ACME HVAC
+            Why Choose ACME SDC
           </div>
 
           <h2 className="text-[clamp(2.25rem,7vw,4rem)] font-black leading-[1] tracking-tight text-slate-950">

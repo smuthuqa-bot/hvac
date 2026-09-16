@@ -17,9 +17,9 @@ export default function Home() {
       <main className="space-y-8 sm:space-y-10 lg:space-y-12">
         <Hero />
         <FounderChairman />
-        <AuthorizedPartners />
-        <Benefits />
         <SkillDevelopmentClasses />
+        <Benefits />
+        <AuthorizedPartners />
         <HvacTraining />
         <TrainingJourney />
         <Eligibility />

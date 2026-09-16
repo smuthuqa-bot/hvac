@@ -14,28 +14,28 @@ const easeOut = [0.22, 1, 0.36, 1] as const;
 
 const trainingImages = [
   {
-    src: "/training/tra7.jpeg",
-    alt: "ACME HVAC Practical Training",
-    label: "Practical HVAC Training",
+    src: "/training/tra7.png",
+    alt: "ACME SDC Practical Training",
+    label: "Practical SDC Training",
   },
   {
     src: "/training/class.jpeg",
-    alt: "ACME HVAC Skill Development Training",
+    alt: "ACME SDC Skill Development Training",
     label: "Skill Development Training",
   },
   {
     src: "/training/classroom.jpeg",
-    alt: "ACME HVAC Classroom Training",
+    alt: "ACME SDC Classroom Training",
     label: "Classroom Training",
   },
   {
     src: "/training/tra2.jpg",
-    alt: "ACME HVAC Technical Training",
+    alt: "ACME SDC Technical Training",
     label: "Technical Training",
   },
   {
-    src: "/training/tra8.jpeg",
-    alt: "ACME HVAC Industry Skill Development",
+    src: "/training/tra1.jpg",
+    alt: "ACME SDC Industry Skill Development",
     label: "Industry Skill Development",
   },
 ];
@@ -48,7 +48,7 @@ const trainingHighlights = [
   {
     number: "01",
     title: "Skill Training",
-    description: "Industry-focused HVAC technical training",
+    description: "Industry-focused SDC technical training",
   },
   {
     number: "02",
@@ -459,7 +459,7 @@ export default function Hero() {
     {/* Actual TN Skill Logo */}
 
     <img
-      src="/newtnlogo.jpeg"
+      src="/tnskill-logo.png"
       alt="Tamil Nadu Skill Development Corporation"
       className="
         relative
@@ -668,7 +668,7 @@ export default function Hero() {
               sm:leading-7
             "
           >
-            Get industry-focused HVAC skill training,
+            Get industry-focused SDC skill training,
             certification, internship opportunities and a
             pathway toward your professional career.
           </motion.p>
@@ -854,7 +854,7 @@ export default function Hero() {
                 >
                   <span className="mr-2 inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-green-400" />
 
-                  ACME HVAC TRAINING
+                  ACME SDC TRAINING
                 </div>
 
                 {/* =================================================
@@ -921,7 +921,7 @@ export default function Hero() {
                       text-green-400
                     "
                   >
-                    ACME HVAC
+                    ACME SDC
                   </p>
 
                   <h3
@@ -1517,7 +1517,7 @@ export default function Hero() {
 
                 <img
                   src="/rightside1.png"
-                  alt="ACME HVAC Skill and Placement 2026"
+                  alt="ACME SDC Skill and Placement 2026"
                   className="
                     h-auto
                     w-full

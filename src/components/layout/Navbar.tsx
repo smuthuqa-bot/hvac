@@ -102,7 +102,7 @@ export default function Navbar() {
             {/* TN Skill Logo */}
             <div className="flex h-[52px] w-[145px] items-center justify-center overflow-hidden rounded-xl bg-white px-2 shadow-lg">
               <img
-                src="/tnskill-logo.jpeg"
+                src="/tnskill-logo.png"
                 alt="TN Skill"
                 className="h-full w-full object-contain"
               />

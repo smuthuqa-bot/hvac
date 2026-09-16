@@ -137,7 +137,7 @@ export default function SkillDevelopmentClasses() {
           className="mx-auto mt-10 max-w-4xl text-center"
         >
           <p className="text-lg font-medium leading-8 text-gray-700 sm:text-xl">
-            ACME HVAC has conducted Skill Development Classes in association
+            ACME SDC has conducted Skill Development Classes in association
             with ICICI Foundation and TILTH (Murugappa)
           </p>
         </motion.div>
