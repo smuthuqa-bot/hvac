@@ -67,6 +67,209 @@ const trainingHighlights = [
   },
 ];
 
+
+/* ============================================================
+   COMPACT HVAC ANIMATION
+   CTA stays attached to this animation without overflow.
+============================================================ */
+function HVACTechnician() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="relative h-[225px] w-full overflow-hidden rounded-2xl bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 shadow-lg"
+    >
+      {/* Background glow */}
+      <motion.div
+        animate={{ scale: [1, 1.12, 1], opacity: [0.2, 0.35, 0.2] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-cyan-400/20 blur-3xl"
+      />
+      <motion.div
+        animate={{ scale: [1.1, 1, 1.1], opacity: [0.12, 0.28, 0.12] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute -bottom-12 -left-8 h-32 w-32 rounded-full bg-blue-500/20 blur-3xl"
+      />
+
+      {/* Heading */}
+      <div className="absolute left-3 top-3 z-20">
+        <p className="text-[9px] font-semibold uppercase tracking-[0.22em] text-cyan-300">
+          ACME HVAC SDC
+        </p>
+        <h3 className="mt-0.5 text-sm font-bold text-white">
+          AC Machine Repair
+        </h3>
+        <p className="mt-0.5 text-[9px] text-slate-300">
+          Practical service &amp; maintenance training
+        </p>
+      </div>
+
+      {/* Technician + AC unit */}
+      <motion.div
+        animate={{ y: [0, -2, 0] }}
+        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-7 left-2 h-[125px] w-[155px]"
+      >
+        <svg
+          viewBox="0 0 220 150"
+          className="h-full w-full"
+          role="img"
+          aria-label="HVAC technician repairing an air conditioner"
+        >
+          {/* AC outdoor unit */}
+          <motion.g
+            animate={{ x: [0, 1.5, 0] }}
+            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <rect x="110" y="18" width="92" height="58" rx="8" fill="#e2e8f0" />
+            <rect x="116" y="25" width="80" height="44" rx="5" fill="#cbd5e1" />
+            <rect x="122" y="31" width="68" height="31" rx="4" fill="#94a3b8" />
+
+            {/* Fan */}
+            <circle cx="156" cy="46" r="14" fill="#475569" />
+            <motion.g
+              animate={{ rotate: 360 }}
+              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+              style={{ transformOrigin: "156px 46px" }}
+            >
+              <ellipse cx="156" cy="38" rx="4" ry="10" fill="#e2e8f0" />
+              <ellipse cx="164" cy="46" rx="10" ry="4" fill="#e2e8f0" />
+              <ellipse cx="156" cy="54" rx="4" ry="10" fill="#e2e8f0" />
+              <ellipse cx="148" cy="46" rx="10" ry="4" fill="#e2e8f0" />
+            </motion.g>
+            <circle cx="156" cy="46" r="3" fill="#0f172a" />
+
+            {/* AC pipe */}
+            <path
+              d="M110 68 C92 70 88 87 76 91"
+              fill="none"
+              stroke="#22d3ee"
+              strokeWidth="4"
+              strokeLinecap="round"
+            />
+            <path
+              d="M115 72 C100 76 97 93 83 97"
+              fill="none"
+              stroke="#f8fafc"
+              strokeWidth="3"
+              strokeLinecap="round"
+            />
+          </motion.g>
+
+          {/* Technician body */}
+          <circle cx="60" cy="50" r="15" fill="#d6a47c" />
+          <path
+            d="M47 48 Q60 28 74 48 Q67 42 61 44 Q54 43 47 48"
+            fill="#1e293b"
+          />
+          <rect x="43" y="67" width="39" height="46" rx="12" fill="#2563eb" />
+          <path
+            d="M49 69 L39 99 L51 103 L61 77"
+            fill="#1d4ed8"
+          />
+          <path
+            d="M75 69 L89 94 L80 100 L66 78"
+            fill="#1d4ed8"
+          />
+
+          {/* Tool belt */}
+          <rect x="46" y="91" width="34" height="7" rx="3" fill="#f59e0b" />
+          <circle cx="57" cy="95" r="3" fill="#0f172a" />
+          <rect x="68" y="94" width="7" height="9" rx="2" fill="#64748b" />
+
+          {/* Arms reaching the AC */}
+          <motion.path
+            animate={{ rotate: [0, 2, 0] }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+            d="M77 74 L101 62 L111 68"
+            fill="none"
+            stroke="#d6a47c"
+            strokeWidth="9"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            style={{ transformOrigin: "77px 74px" }}
+          />
+          <circle cx="111" cy="68" r="5" fill="#d6a47c" />
+
+          {/* Legs */}
+          <path
+            d="M54 111 L48 139"
+            stroke="#0f172a"
+            strokeWidth="10"
+            strokeLinecap="round"
+          />
+          <path
+            d="M71 111 L79 139"
+            stroke="#0f172a"
+            strokeWidth="10"
+            strokeLinecap="round"
+          />
+          <path
+            d="M42 141 L55 141"
+            stroke="#111827"
+            strokeWidth="6"
+            strokeLinecap="round"
+          />
+          <path
+            d="M74 141 L88 141"
+            stroke="#111827"
+            strokeWidth="6"
+            strokeLinecap="round"
+          />
+        </svg>
+      </motion.div>
+
+      {/* Floating repair indicators */}
+      <motion.div
+        animate={{ y: [0, -7, 0], rotate: [0, 8, 0] }}
+        transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute right-3 top-[62px] flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/10 text-base shadow-lg backdrop-blur"
+      >
+        🔧
+      </motion.div>
+
+      <motion.div
+        animate={{ y: [0, 6, 0], rotate: [0, -8, 0] }}
+        transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute right-14 top-[82px] flex h-7 w-7 items-center justify-center rounded-lg border border-cyan-300/20 bg-cyan-400/10 text-sm shadow-lg backdrop-blur"
+      >
+        ❄️
+      </motion.div>
+
+      {/* Tools panel */}
+      <motion.div
+        initial={{ x: 18, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ delay: 0.35, duration: 0.5 }}
+        className="absolute bottom-2 right-2 w-[92px] rounded-xl border border-white/10 bg-white/10 p-2 backdrop-blur-md"
+      >
+        <p className="mb-1 text-[8px] font-bold uppercase tracking-[0.16em] text-cyan-200">
+          Tools
+        </p>
+        <div className="grid grid-cols-3 gap-1.5 text-center text-sm">
+          <span title="Wrench">🔧</span>
+          <span title="Screwdriver">🪛</span>
+          <span title="Multimeter">📟</span>
+          <span title="Gauge">⏱️</span>
+          <span title="Drill">🔩</span>
+          <span title="Safety">🦺</span>
+        </div>
+      </motion.div>
+
+      {/* Bottom label */}
+      <div className="absolute bottom-2 left-3 z-20">
+        <div className="flex items-center gap-1.5">
+          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.9)]" />
+          <span className="text-[8px] font-semibold uppercase tracking-[0.15em] text-slate-200">
+            Live Practical Training
+          </span>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 export default function Hero() {
   const [activeImage, setActiveImage] = useState(0);
 
@@ -74,6 +277,7 @@ export default function Hero() {
      AUTOMATIC IMAGE ROTATION
 
      4500 = 4.5 seconds
+     ALL 5 IMAGES WILL ROTATE
   ========================================================== */
 
   useEffect(() => {
@@ -92,29 +296,6 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, []);
 
-  /* ==========================================================
-     CORPORATE ENQUIRY SCROLL
-
-     This directly finds the existing CorporateInquiry
-     component on the SAME HOME PAGE and scrolls to it.
-  ========================================================== */
-
-  const scrollToCorporateInquiry = () => {
-    const section = document.getElementById("corporate-inquiry");
-
-    if (!section) {
-      console.warn(
-        "Corporate Inquiry section not found. Make sure CorporateInquiry has id='corporate-inquiry'."
-      );
-      return;
-    }
-
-    section.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  };
-
   return (
     <section
       id="home"
@@ -130,6 +311,7 @@ export default function Hero() {
       ===================================================== */}
 
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
+
         {/* Green glow */}
 
         <motion.div
@@ -168,22 +350,22 @@ export default function Hero() {
           }}
           className="
             absolute
-            right-[-180px]
+            -right-40
             top-20
             h-[500px]
             w-[500px]
             rounded-full
-            bg-blue-50
+            bg-blue-100/40
             blur-3xl
           "
         />
 
-        {/* Floating dot */}
+        {/* Floating dots */}
 
         <motion.div
           animate={{
-            y: [0, -12, 0],
-            opacity: [0.3, 0.7, 0.3],
+            y: [0, -15, 0],
+            opacity: [0.25, 0.8, 0.25],
           }}
           transition={{
             duration: 4,
@@ -203,12 +385,10 @@ export default function Hero() {
           "
         />
 
-        {/* Floating dot */}
-
         <motion.div
           animate={{
-            y: [0, 12, 0],
-            opacity: [0.2, 0.6, 0.2],
+            y: [0, 15, 0],
+            opacity: [0.2, 0.7, 0.2],
           }}
           transition={{
             duration: 5,
@@ -217,8 +397,8 @@ export default function Hero() {
           }}
           className="
             absolute
-            left-[45%]
-            top-[18%]
+            left-[43%]
+            top-[15%]
             hidden
             h-2
             w-2
@@ -233,7 +413,9 @@ export default function Hero() {
           SPARK ANIMATION
       ===================================================== */}
 
-      <SparkBurst />
+      <div className="pointer-events-none absolute inset-0">
+        <SparkBurst />
+      </div>
 
       {/* =====================================================
           NAVBAR
@@ -268,11 +450,27 @@ export default function Hero() {
           lg:pt-10
         "
       >
+
         {/* =================================================
-            LEFT CONTENT
+            LEFT SIDE
         ================================================= */}
 
-        <div className="relative z-10">
+        <motion.div
+          initial={{
+            opacity: 0,
+            x: -50,
+          }}
+          animate={{
+            opacity: 1,
+            x: 0,
+          }}
+          transition={{
+            duration: 0.9,
+            ease: easeOut,
+          }}
+          className="relative z-10"
+        >
+
           {/* =================================================
               TOP BADGE
           ================================================= */}
@@ -280,7 +478,7 @@ export default function Hero() {
           <motion.div
             initial={{
               opacity: 0,
-              y: -35,
+              y: -25,
             }}
             animate={{
               opacity: 1,
@@ -288,6 +486,7 @@ export default function Hero() {
             }}
             transition={{
               duration: 0.7,
+              delay: 0.15,
               ease: easeOut,
             }}
             className="
@@ -304,12 +503,14 @@ export default function Hero() {
               text-xs
               font-bold
               text-green-700
+              shadow-sm
               sm:text-sm
             "
           >
             <motion.span
               animate={{
-                scale: [1, 1.35, 1],
+                scale: [1, 1.4, 1],
+                opacity: [0.7, 1, 0.7],
               }}
               transition={{
                 duration: 1.8,
@@ -320,103 +521,327 @@ export default function Hero() {
                 w-2.5
                 rounded-full
                 bg-green-500
+                shadow-lg
+                shadow-green-500/40
               "
             />
 
-            SKILL & PLACEMENT 2026
+            SKILL DEVELOPMENT & TRAINING
           </motion.div>
+
+          {/* =================================================
+              TN SKILL LOGO - IMPROVED SIZE
+          ================================================= */}
+
+         {/* =================================================
+          {/* =================================================
+    TN SKILL LOGO
+================================================= */}
+
+<motion.div
+  initial={{
+    opacity: 0,
+    y: 25,
+    scale: 0.92,
+  }}
+  animate={{
+    opacity: 1,
+    y: 0,
+    scale: 1,
+  }}
+  transition={{
+    duration: 0.8,
+    delay: 0.3,
+    ease: easeOut,
+  }}
+  whileHover={{
+    y: -3,
+    scale: 1.01,
+  }}
+  className="
+    relative
+    mb-7
+    flex
+    min-h-[145px]
+    w-full
+    flex-col
+    items-center
+    justify-center
+    overflow-hidden
+    rounded-2xl
+    border
+    border-slate-200
+    bg-white
+    px-6
+    py-4
+    shadow-lg
+    shadow-slate-200/50
+    transition-shadow
+    duration-300
+    hover:shadow-xl
+    sm:min-h-[165px]
+    sm:px-8
+    sm:py-5
+  "
+>
+  {/* Animated light sweep */}
+
+  <motion.div
+    animate={{
+      x: ["-120%", "180%"],
+    }}
+    transition={{
+      duration: 3.5,
+      repeat: Infinity,
+      repeatDelay: 2,
+      ease: "easeInOut",
+    }}
+    className="
+      pointer-events-none
+      absolute
+      inset-y-0
+      -left-20
+      w-28
+      skew-x-[-20deg]
+      bg-gradient-to-r
+      from-transparent
+      via-green-100/70
+      to-transparent
+    "
+  />
+
+  {/* =================================================
+      TN SKILL LOGO
+  ================================================= */}
+
+  <motion.div
+    animate={{
+      y: [0, -2, 0],
+      rotate: [0, 0.3, 0, -0.3, 0],
+    }}
+    transition={{
+      duration: 5,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+    className="
+      relative
+      flex
+      h-[95px]
+      w-[240px]
+      items-center
+      justify-center
+      sm:h-[110px]
+      sm:w-[290px]
+      lg:h-[120px]
+      lg:w-[320px]
+    "
+  >
+    {/* Logo glow */}
+
+    <motion.div
+      animate={{
+        opacity: [0.12, 0.35, 0.12],
+        scale: [0.9, 1.05, 0.9],
+      }}
+      transition={{
+        duration: 3,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+      className="
+        pointer-events-none
+        absolute
+        inset-5
+        rounded-full
+        bg-green-400/20
+        blur-2xl
+      "
+    />
+
+    {/* Actual TN Skill Logo */}
+
+    <img
+      src="/tnskill-logo.png"
+      alt="Tamil Nadu Skill Development Corporation"
+      className="
+        relative
+        z-10
+        h-full
+        w-full
+        object-contain
+      "
+    />
+  </motion.div>
+
+  {/* =================================================
+      SKILL • TRAINING • CAREER
+  ================================================= */}
+
+  <motion.div
+    initial={{
+      opacity: 0,
+      y: 8,
+    }}
+    animate={{
+      opacity: 1,
+      y: 0,
+    }}
+    transition={{
+      duration: 0.6,
+      delay: 0.65,
+    }}
+    className="
+      relative
+      z-10
+      mt-1
+      flex
+      items-center
+      justify-center
+      gap-2
+      text-sm
+      font-bold
+      tracking-wide
+      text-[#082B57]
+      sm:text-base
+    "
+  >
+    <span>Skill</span>
+
+    <span className="text-green-500">
+      •
+    </span>
+
+    <span>Training</span>
+
+    <span className="text-green-500">
+      •
+    </span>
+
+    <span>Career</span>
+  </motion.div>
+</motion.div>
 
           {/* =================================================
               MAIN HEADING
           ================================================= */}
 
           <div className="overflow-hidden">
+
             <motion.h1
-              initial="hidden"
-              animate="visible"
+              initial={{
+                opacity: 0,
+                y: 80,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.85,
+                delay: 0.45,
+                ease: easeOut,
+              }}
               className="
-                max-w-3xl
-                overflow-hidden
-                text-[clamp(2.75rem,10vw,5rem)]
+                text-[clamp(2.2rem,6vw,3.8rem)]
                 font-black
-                leading-[0.94]
+                leading-[0.95]
                 tracking-tight
-                sm:text-6xl
-                lg:text-7xl
-                xl:text-8xl
+                text-[#082B57]
+                sm:text-5xl
+                lg:text-6xl
               "
             >
-              <motion.span
-                variants={{
-                  hidden: {
-                    opacity: 0,
-                    y: 60,
-                  },
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-                    transition: {
-                      duration: 0.7,
-                      ease: easeOut,
-                    },
-                  },
-                }}
-                className="block"
-              >
-                Build Your
-              </motion.span>
+              Build Skills.
+            </motion.h1>
+          </div>
 
-              <motion.span
-                variants={{
-                  hidden: {
-                    opacity: 0,
-                    y: 70,
-                  },
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-                    transition: {
-                      delay: 0.18,
-                      duration: 0.8,
-                      ease: easeOut,
-                    },
-                  },
-                }}
-                className="
-                  block
-                  text-[#65C943]
-                "
-              >
-                HVAC Career.
-              </motion.span>
+          <div className="overflow-hidden">
+
+            <motion.h1
+              initial={{
+                opacity: 0,
+                y: 90,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.9,
+                delay: 0.58,
+                ease: easeOut,
+              }}
+              className="
+                text-[clamp(2.2rem,6vw,3.8rem)]
+                font-black
+                leading-[0.95]
+                tracking-tight
+                text-[#65C943]
+                sm:text-5xl
+                lg:text-6xl
+              "
+            >
+              Build Your Future.
             </motion.h1>
           </div>
 
           {/* =================================================
-              ANIMATED UNDERLINE
+              UNDERLINE
           ================================================= */}
 
-          <motion.div
-            initial={{
-              width: 0,
-              opacity: 0,
-            }}
-            animate={{
-              width: "110px",
-              opacity: 1,
-            }}
-            transition={{
-              delay: 1.05,
-              duration: 0.7,
-              ease: easeOut,
-            }}
+          <div
             className="
+              relative
               mt-5
               h-1.5
+              w-28
+              overflow-hidden
               rounded-full
-              bg-green-500
+              bg-green-100
             "
-          />
+          >
+            <motion.div
+              initial={{
+                x: "-100%",
+              }}
+              animate={{
+                x: "0%",
+              }}
+              transition={{
+                duration: 0.8,
+                delay: 1,
+                ease: easeOut,
+              }}
+              className="
+                h-full
+                w-full
+                rounded-full
+                bg-gradient-to-r
+                from-green-500
+                to-green-400
+              "
+            />
+
+            <motion.div
+              animate={{
+                x: ["-100%", "220%"],
+              }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                repeatDelay: 3,
+                ease: "easeInOut",
+              }}
+              className="
+                absolute
+                inset-y-0
+                w-8
+                skew-x-[-20deg]
+                bg-white/70
+              "
+            />
+          </div>
 
           {/* =================================================
               DESCRIPTION
@@ -425,34 +850,35 @@ export default function Hero() {
           <motion.p
             initial={{
               opacity: 0,
-              y: 30,
+              y: 25,
             }}
             animate={{
               opacity: 1,
               y: 0,
             }}
             transition={{
-              delay: 1.05,
               duration: 0.7,
+              delay: 0.85,
               ease: easeOut,
             }}
             className="
-              mt-6
+              mt-5
               max-w-xl
-              text-base
-              leading-7
+              text-sm
+              leading-6
               text-slate-600
-              sm:text-lg
-              sm:leading-8
+              sm:text-base
+              sm:leading-7
             "
           >
-            Get industry-focused HVAC skill training,
-            certification, internship opportunities and
-            a pathway toward your professional career.
+            Get industry-focused SDC skill training,
+            certification, internship opportunities and a
+            pathway toward your professional career.
           </motion.p>
 
           {/* =================================================
               TRAINING PHOTO SLIDER
+              ALL 5 IMAGES
           ================================================= */}
 
           <motion.div
@@ -466,15 +892,12 @@ export default function Hero() {
             }}
             transition={{
               duration: 0.9,
-              delay: 1.15,
+              delay: 1.05,
               ease: easeOut,
             }}
-            className="
-              relative
-              mt-7
-              overflow-visible
-            "
+            className="relative mt-7 overflow-visible"
           >
+
             {/* Outer glow */}
 
             <motion.div
@@ -514,7 +937,10 @@ export default function Hero() {
                 shadow-slate-200/60
               "
             >
-              {/* Image */}
+
+              {/* =================================================
+                  IMAGE
+              ================================================= */}
 
               <div
                 className="
@@ -525,7 +951,9 @@ export default function Hero() {
                   sm:h-[330px]
                 "
               >
+
                 <AnimatePresence mode="wait">
+
                   <motion.img
                     key={`${trainingImages[activeImage].src}-${activeImage}`}
                     src={trainingImages[activeImage].src}
@@ -557,6 +985,7 @@ export default function Hero() {
                       object-cover
                     "
                   />
+
                 </AnimatePresence>
 
                 {/* Image overlay */}
@@ -567,68 +996,73 @@ export default function Hero() {
                     absolute
                     inset-0
                     bg-gradient-to-t
-                    from-black/65
-                    via-black/10
+                    from-[#061A33]/85
+                    via-[#061A33]/10
                     to-transparent
                   "
                 />
 
-                {/* Training label */}
+                {/* =================================================
+                    MOVING LIGHT
+                ================================================= */}
 
                 <motion.div
-                  key={`label-${activeImage}`}
-                  initial={{
-                    opacity: 0,
-                    y: 15,
-                  }}
                   animate={{
-                    opacity: 1,
-                    y: 0,
+                    x: ["-120%", "120%"],
                   }}
                   transition={{
-                    duration: 0.5,
-                    delay: 0.15,
+                    duration: 2.8,
+                    repeat: Infinity,
+                    repeatDelay: 5,
+                    ease: "easeInOut",
                   }}
                   className="
+                    pointer-events-none
                     absolute
-                    bottom-4
+                    inset-y-0
+                    w-20
+                    skew-x-[-20deg]
+                    bg-gradient-to-r
+                    from-transparent
+                    via-white/20
+                    to-transparent
+                    blur-sm
+                  "
+                />
+
+                {/* =================================================
+                    TOP LABEL
+                ================================================= */}
+
+                <div
+                  className="
+                    absolute
                     left-4
-                    rounded-xl
+                    top-4
+                    rounded-full
                     border
                     border-white/20
-                    bg-[#082B57]/90
+                    bg-black/25
                     px-4
-                    py-2.5
+                    py-2
+                    text-[10px]
+                    font-bold
+                    uppercase
+                    tracking-wider
                     text-white
-                    shadow-xl
                     backdrop-blur-md
+                    sm:left-5
+                    sm:top-5
                   "
                 >
-                  <p
-                    className="
-                      text-[9px]
-                      font-bold
-                      uppercase
-                      tracking-[0.2em]
-                      text-green-300
-                    "
-                  >
-                    ACME HVAC
-                  </p>
+                  <span className="mr-2 inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-green-400" />
 
-                  <p
-                    className="
-                      mt-1
-                      text-sm
-                      font-black
-                      sm:text-base
-                    "
-                  >
-                    {trainingImages[activeImage].label}
-                  </p>
-                </motion.div>
+                  ACME SDC TRAINING
+                </div>
 
-                {/* Image counter */}
+                {/* =================================================
+                    IMAGE COUNTER
+                ================================================= */}
 
                 <div
                   className="
@@ -645,34 +1079,93 @@ export default function Hero() {
                     font-bold
                     text-white
                     backdrop-blur-md
+                    sm:right-5
+                    sm:top-5
                   "
                 >
-                  {String(activeImage + 1).padStart(2, "0")} /{" "}
+                  {String(activeImage + 1).padStart(2, "0")}
+                  {" / "}
                   {String(trainingImages.length).padStart(2, "0")}
                 </div>
 
-                {/* Image dots */}
+                {/* =================================================
+                    BOTTOM CONTENT
+                ================================================= */}
+
+                <motion.div
+                  key={`label-${activeImage}`}
+                  initial={{
+                    opacity: 0,
+                    y: 15,
+                  }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  transition={{
+                    duration: 0.5,
+                  }}
+                  className="
+                    absolute
+                    bottom-5
+                    left-5
+                    max-w-[70%]
+                    sm:bottom-7
+                    sm:left-7
+                  "
+                >
+
+                  <p
+                    className="
+                      text-[9px]
+                      font-bold
+                      uppercase
+                      tracking-[0.2em]
+                      text-green-400
+                    "
+                  >
+                    ACME SDC
+                  </p>
+
+                  <h3
+                    className="
+                      mt-1
+                      text-lg
+                      font-black
+                      text-white
+                      sm:text-2xl
+                    "
+                  >
+                    {trainingImages[activeImage].label}
+                  </h3>
+
+                </motion.div>
+
+                {/* =================================================
+                    DOT INDICATORS - ALL 5
+                ================================================= */}
 
                 <div
                   className="
                     absolute
-                    bottom-5
+                    bottom-6
                     right-5
-                    z-10
                     flex
                     items-center
                     gap-1.5
+                    sm:bottom-7
+                    sm:right-7
                   "
                 >
-                  {trainingImages.map((_, index) => (
+                  {trainingImages.map((image, index) => (
                     <button
-                      key={index}
+                      key={image.src}
                       type="button"
                       onClick={() => setActiveImage(index)}
-                      aria-label={`Show training image ${index + 1}`}
+                      aria-label={`Show ${image.label}`}
                       className="
                         flex
-                        h-4
+                        h-5
                         items-center
                         justify-center
                       "
@@ -696,11 +1189,13 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Progress bar */}
+              {/* =================================================
+                  PROGRESS BAR
+              ================================================= */}
 
               <div className="h-1 bg-slate-200">
                 <motion.div
-                  key={activeImage}
+                  key={`progress-${activeImage}`}
                   initial={{
                     width: "0%",
                   }}
@@ -748,19 +1243,18 @@ export default function Hero() {
                 key={item.number}
                 initial={{
                   opacity: 0,
-                  y: 20,
+                  y: 15,
                 }}
                 animate={{
                   opacity: 1,
                   y: 0,
                 }}
                 transition={{
-                  delay: 1.3 + index * 0.08,
+                  delay: 1.25 + index * 0.08,
                   duration: 0.5,
-                  ease: easeOut,
                 }}
                 whileHover={{
-                  y: -3,
+                  y: -4,
                 }}
                 className="
                   rounded-xl
@@ -772,9 +1266,10 @@ export default function Hero() {
                   shadow-sm
                   transition-shadow
                   duration-300
-                  hover:shadow-md
+                  hover:shadow-lg
                 "
               >
+
                 <div
                   className="
                     mb-2
@@ -783,6 +1278,7 @@ export default function Hero() {
                     justify-between
                   "
                 >
+
                   <div
                     className="
                       flex
@@ -792,7 +1288,7 @@ export default function Hero() {
                       justify-center
                       rounded-full
                       bg-green-500
-                      text-xs
+                      text-[10px]
                       font-black
                       text-white
                     "
@@ -809,6 +1305,7 @@ export default function Hero() {
                   >
                     {item.number}
                   </span>
+
                 </div>
 
                 <p
@@ -833,6 +1330,7 @@ export default function Hero() {
                 >
                   {item.description}
                 </p>
+
               </motion.div>
             ))}
           </motion.div>
@@ -872,6 +1370,7 @@ export default function Hero() {
               sm:py-4
             "
           >
+
             <motion.div
               animate={{
                 x: ["-100%", "200%"],
@@ -896,6 +1395,7 @@ export default function Hero() {
             />
 
             <div className="relative flex items-center gap-3">
+
               <motion.div
                 animate={{
                   scale: [1, 1.08, 1],
@@ -927,6 +1427,7 @@ export default function Hero() {
               </motion.div>
 
               <div>
+
                 <p
                   className="
                     text-sm
@@ -948,12 +1449,13 @@ export default function Hero() {
                 >
                   Terms & conditions apply
                 </p>
+
               </div>
             </div>
           </motion.div>
 
           {/* =================================================
-              CTA BUTTONS
+              CTA
           ================================================= */}
 
           <motion.div
@@ -968,7 +1470,6 @@ export default function Hero() {
             transition={{
               delay: 1.75,
               duration: 0.7,
-              ease: easeOut,
             }}
             className="
               mt-6
@@ -978,6 +1479,7 @@ export default function Hero() {
               sm:flex-row
             "
           >
+
             <motion.a
               href="#register"
               whileHover={{
@@ -1034,6 +1536,7 @@ export default function Hero() {
             >
               Explore Program
             </motion.a>
+
           </motion.div>
 
           {/* =================================================
@@ -1050,7 +1553,7 @@ export default function Hero() {
               y: 0,
             }}
             transition={{
-              delay: 2,
+              delay: 1.9,
               duration: 0.7,
             }}
             className="
@@ -1065,6 +1568,7 @@ export default function Hero() {
               sm:gap-8
             "
           >
+
             <div>
               <div className="text-xl font-black sm:text-2xl">
                 18–35
@@ -1115,350 +1619,37 @@ export default function Hero() {
                 Internship
               </div>
             </div>
+
           </motion.div>
-        </div>
+        </motion.div>
 
         {/* =================================================
             RIGHT SIDE
+            ANIMATION + CORPORATE CTA = ONE SECTION
+            FULL-WIDTH BANNER BELOW
         ================================================= */}
-
         <motion.div
-          initial={{
-            opacity: 0,
-            x: 60,
-            scale: 0.94,
-          }}
-          animate={{
-            opacity: 1,
-            x: 0,
-            scale: 1,
-          }}
-          transition={{
-            duration: 1,
-            delay: 0.25,
-            ease: [0.16, 1, 0.3, 1],
-          }}
-          className="
-            relative
-            z-20
-            mx-auto
-            w-full
-            max-w-xl
-          "
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: easeOut }}
+          className="relative mx-auto w-full max-w-xl"
         >
+          {/* =================================================
+              ONE COMBINED ANIMATION + CTA SECTION
+          ================================================= */}
           <div
             className="
-              relative
-              mx-auto
-              w-[88%]
-              sm:w-[82%]
-              lg:w-full
+              relative overflow-hidden rounded-[1.5rem]
+              border border-slate-200 bg-white
+              p-3 shadow-xl shadow-slate-200/50
+              sm:p-4
             "
           >
-            {/* =================================================
-                CORPORATE PARTNERSHIP CTA
-                IMPORTANT:
-                z-50 + pointer-events-auto
-                makes the button clickable.
-            ================================================= */}
-
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: -25,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.8,
-                delay: 0.45,
-                ease: easeOut,
-              }}
-              className="
-                relative
-                z-50
-                mb-7
-                overflow-hidden
-                rounded-[2rem]
-                border
-                border-[#082B57]/10
-                bg-gradient-to-br
-                from-[#082B57]
-                via-[#0A376D]
-                to-[#0D4B7D]
-                px-6
-                py-6
-                shadow-2xl
-                shadow-[#082B57]/20
-                sm:px-8
-                sm:py-7
-              "
-            >
-              {/* Green glow */}
-
-              <motion.div
-                animate={{
-                  scale: [1, 1.15, 1],
-                  opacity: [0.12, 0.25, 0.12],
-                }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="
-                  pointer-events-none
-                  absolute
-                  -right-20
-                  -top-20
-                  h-52
-                  w-52
-                  rounded-full
-                  bg-green-400
-                  blur-3xl
-                "
-              />
-
-              {/* Light sweep */}
-
-              <motion.div
-                animate={{
-                  x: ["-120%", "150%"],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  repeatDelay: 3,
-                  ease: "easeInOut",
-                }}
-                className="
-                  pointer-events-none
-                  absolute
-                  inset-y-0
-                  -left-20
-                  w-20
-                  skew-x-[-20deg]
-                  bg-gradient-to-r
-                  from-transparent
-                  via-white/10
-                  to-transparent
-                "
-              />
-
-              <div className="relative z-10">
-                {/* Label */}
-
-                <div className="flex items-center gap-2">
-                  <motion.span
-                    animate={{
-                      scale: [1, 1.35, 1],
-                      opacity: [0.7, 1, 0.7],
-                    }}
-                    transition={{
-                      duration: 1.8,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                    className="
-                      h-2
-                      w-2
-                      rounded-full
-                      bg-green-400
-                      shadow-lg
-                      shadow-green-400/50
-                    "
-                  />
-
-                  <span
-                    className="
-                      text-[9px]
-                      font-bold
-                      uppercase
-                      tracking-[0.2em]
-                      text-green-300
-                      sm:text-[10px]
-                    "
-                  >
-                    Corporate Partnership
-                  </span>
-                </div>
-
-                {/* Heading */}
-
-                <h2
-                  className="
-                    mt-3
-                    max-w-md
-                    text-2xl
-                    font-black
-                    leading-tight
-                    text-white
-                    sm:text-3xl
-                  "
-                >
-                  Need Skilled HVAC
-                  <span className="text-green-400">
-                    {" "}
-                    Professionals?
-                  </span>
-                </h2>
-
-                {/* Description */}
-
-                <p
-                  className="
-                    mt-3
-                    max-w-lg
-                    text-xs
-                    leading-6
-                    text-slate-300
-                    sm:text-sm
-                    sm:leading-6
-                  "
-                >
-                  Share your company workforce requirement
-                  with ACME SDC. Tell us how many skilled
-                  professionals you need and whether your
-                  requirement is permanent or temporary.
-                </p>
-
-                {/* Tags */}
-
-                <div className="mt-4 flex flex-wrap gap-2">
-                  <span
-                    className="
-                      rounded-full
-                      border
-                      border-white/10
-                      bg-white/10
-                      px-3
-                      py-1.5
-                      text-[9px]
-                      font-semibold
-                      text-white/90
-                      backdrop-blur-sm
-                      sm:text-[10px]
-                    "
-                  >
-                    Skilled Workforce
-                  </span>
-
-                  <span
-                    className="
-                      rounded-full
-                      border
-                      border-white/10
-                      bg-white/10
-                      px-3
-                      py-1.5
-                      text-[9px]
-                      font-semibold
-                      text-white/90
-                      backdrop-blur-sm
-                      sm:text-[10px]
-                    "
-                  >
-                    Permanent
-                  </span>
-
-                  <span
-                    className="
-                      rounded-full
-                      border
-                      border-white/10
-                      bg-white/10
-                      px-3
-                      py-1.5
-                      text-[9px]
-                      font-semibold
-                      text-white/90
-                      backdrop-blur-sm
-                      sm:text-[10px]
-                    "
-                  >
-                    Temporary
-                  </span>
-                </div>
-
-                {/* =================================================
-                    CORPORATE ENQUIRY BUTTON
-
-                    This is a real button with onClick.
-                    It does NOT depend on href/hash.
-                ================================================= */}
-
-                <div className="relative z-[100] mt-5">
-                  <motion.button
-                    type="button"
-                    onClick={scrollToCorporateInquiry}
-                    whileHover={{
-                      scale: 1.03,
-                      x: 3,
-                    }}
-                    whileTap={{
-                      scale: 0.97,
-                    }}
-                    className="
-                      group
-                      relative
-                      z-[100]
-                      flex
-                      w-full
-                      cursor-pointer
-                      items-center
-                      justify-center
-                      gap-3
-                      rounded-xl
-                      bg-green-500
-                      px-5
-                      py-3.5
-                      text-sm
-                      font-black
-                      text-white
-                      shadow-xl
-                      shadow-green-900/30
-                      transition-all
-                      duration-300
-                      hover:bg-green-400
-                      sm:w-auto
-                      sm:px-7
-                    "
-                  >
-                    <span>
-                      Submit Corporate Enquiry
-                    </span>
-
-                    <span
-                      className="
-                        flex
-                        h-7
-                        w-7
-                        items-center
-                        justify-center
-                        rounded-full
-                        bg-white/15
-                        transition-transform
-                        duration-300
-                        group-hover:translate-x-1
-                      "
-                    >
-                      →
-                    </span>
-                  </motion.button>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* =================================================
-                EXISTING BANNER
-                KEPT BELOW CORPORATE CTA
-            ================================================= */}
-
+            {/* subtle section glow */}
             <motion.div
               animate={{
-                y: [0, -6, 0],
+                opacity: [0.18, 0.32, 0.18],
+                scale: [0.98, 1.02, 0.98],
               }}
               transition={{
                 duration: 5,
@@ -1466,158 +1657,176 @@ export default function Hero() {
                 ease: "easeInOut",
               }}
               className="
-                relative
-                z-10
-                overflow-hidden
-                rounded-[2rem]
-                border
-                border-slate-200
-                bg-white
-                p-1.5
-                shadow-2xl
-                shadow-slate-300/40
+                pointer-events-none absolute
+                -right-16 -top-16 h-40 w-40
+                rounded-full bg-green-400/20 blur-3xl
               "
-            >
-              <div
+            />
+
+            {/* animation + CTA in the SAME ROW on desktop */}
+            <div className="relative z-10 grid items-center gap-3 sm:grid-cols-[0.9fr_1.1fr]">
+              {/* compact animation */}
+              <HVACTechnician />
+
+              {/* corporate CTA */}
+              <motion.div
+                initial={{ opacity: 0, x: 12 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.55, ease: easeOut }}
                 className="
-                  overflow-hidden
-                  rounded-[1.6rem]
+                  relative overflow-hidden rounded-2xl
+                  border border-green-200
+                  bg-gradient-to-br from-green-50 to-white
+                  p-3.5 sm:p-4
                 "
               >
+                <motion.div
+                  animate={{ x: ["-120%", "180%"] }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    repeatDelay: 4,
+                    ease: "easeInOut",
+                  }}
+                  className="
+                    pointer-events-none absolute inset-y-0
+                    w-16 skew-x-[-20deg]
+                    bg-gradient-to-r from-transparent via-white/80 to-transparent
+                  "
+                />
+
+                <div className="relative">
+                  <div className="mb-2 flex items-center gap-2">
+                    <motion.span
+                      animate={{
+                        scale: [1, 1.12, 1],
+                        boxShadow: [
+                          "0 0 0 rgba(101,201,67,0)",
+                          "0 0 16px rgba(101,201,67,.25)",
+                          "0 0 0 rgba(101,201,67,0)",
+                        ],
+                      }}
+                      transition={{ duration: 2.2, repeat: Infinity }}
+                      className="
+                        flex h-7 w-7 shrink-0
+                        items-center justify-center rounded-lg
+                        bg-green-500 text-xs font-black text-white
+                      "
+                    >
+                      ✓
+                    </motion.span>
+
+                    <p className="text-[8px] font-bold uppercase tracking-[0.15em] text-green-600">
+                      Corporate Partnership
+                    </p>
+                  </div>
+
+                  <h3 className="text-sm font-black leading-tight text-[#082B57] sm:text-base">
+                    Need Skilled HVAC Professionals?
+                  </h3>
+
+                  <p className="mt-1.5 text-[9px] leading-4 text-slate-500 sm:text-[10px]">
+                    Partner with ACME SDC for trained, industry-ready HVAC talent.
+                  </p>
+
+                  <div className="mt-2 flex flex-wrap gap-1">
+                    <span className="rounded-full bg-white px-2 py-1 text-[7px] font-bold text-green-700 shadow-sm">
+                      Skilled Talent
+                    </span>
+                    <span className="rounded-full bg-white px-2 py-1 text-[7px] font-bold text-[#082B57] shadow-sm">
+                      Industry Ready
+                    </span>
+                  </div>
+
+                  <motion.a
+                    href="#corporate-inquiry"
+                    whileHover={{ scale: 1.02, y: -1 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="
+                      mt-2.5 inline-flex w-full items-center
+                      justify-center rounded-lg
+                      bg-[#082B57] px-3 py-2
+                      text-[9px] font-bold text-white
+                      shadow-md shadow-blue-900/10
+                      transition hover:bg-[#0B376A]
+                    "
+                  >
+                    Submit Corporate Enquiry →
+                  </motion.a>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+
+          {/* =================================================
+              FULL RIGHT-SIDE BANNER
+              NO max-height — show the complete image.
+          ================================================= */}
+          <div className="relative mt-4 w-full">
+            <motion.div
+              animate={{
+                opacity: [0.25, 0.45, 0.25],
+                scale: [0.99, 1.01, 0.99],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="
+                pointer-events-none absolute -inset-2
+                rounded-[1.5rem] bg-green-500/10 blur-xl
+              "
+            />
+
+            <motion.div
+              animate={{ y: [0, -4, 0] }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="
+                relative w-full overflow-hidden
+                rounded-[1.5rem]
+                border border-slate-200 bg-white p-1.5
+                shadow-2xl shadow-slate-300/40
+              "
+            >
+              <div className="overflow-hidden rounded-[1.2rem]">
                 <img
                   src="/rightside1.png"
                   alt="ACME SDC Skill and Placement 2026"
-                  className="
-                    h-auto
-                    w-full
-                    object-cover
-                  "
+                  className="block h-auto w-full object-contain"
                 />
               </div>
             </motion.div>
-
-            {/* =================================================
-                CAREER BADGE
-            ================================================= */}
-
-            <motion.div
-              animate={{
-                y: [0, -8, 0],
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="
-                absolute
-                z-30
-                -bottom-4
-                -left-3
-                rounded-2xl
-                border
-                border-green-100
-                bg-white
-                px-4
-                py-3
-                shadow-xl
-                sm:-left-6
-                sm:px-5
-                sm:py-4
-              "
-            >
-              <div
-                className="
-                  text-[10px]
-                  font-bold
-                  uppercase
-                  tracking-wider
-                  text-green-600
-                "
-              >
-                Career Focused
-              </div>
-
-              <div
-                className="
-                  mt-1
-                  text-sm
-                  font-black
-                  text-[#082B57]
-                  sm:text-base
-                "
-              >
-                Skill → Experience → Career
-              </div>
-            </motion.div>
-
-            {/* =================================================
-                ELIGIBILITY BADGE
-            ================================================= */}
-
-            <motion.div
-              animate={{
-                y: [0, 8, 0],
-              }}
-              transition={{
-                duration: 4.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="
-                absolute
-                z-30
-                right-[-5px]
-                top-[calc(50%+40px)]
-                rounded-2xl
-                border
-                border-green-100
-                bg-white
-                px-4
-                py-3
-                shadow-xl
-                sm:-right-5
-                sm:top-[calc(50%+50px)]
-                sm:px-5
-                sm:py-4
-              "
-            >
-              <div
-                className="
-                  text-[10px]
-                  font-bold
-                  uppercase
-                  tracking-wider
-                  text-slate-500
-                "
-              >
-                Open For
-              </div>
-
-              <div
-                className="
-                  mt-1
-                  text-sm
-                  font-black
-                  text-[#082B57]
-                "
-              >
-                Women & Men
-              </div>
-
-              <div
-                className="
-                  mt-0.5
-                  text-[10px]
-                  font-semibold
-                  text-green-600
-                "
-              >
-                Age 18–35
-              </div>
-            </motion.div>
           </div>
+
+          {/* compact career badge */}
+          <motion.div
+            animate={{ y: [0, -5, 0] }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="
+              absolute -bottom-3 -left-2 z-20
+              rounded-xl border border-green-100
+              bg-white px-3 py-2 shadow-lg
+              sm:-left-4
+            "
+          >
+            <div className="text-[8px] font-bold uppercase tracking-wider text-green-600">
+              Career Focused
+            </div>
+            <div className="mt-0.5 text-[10px] font-black text-[#082B57] sm:text-xs">
+              Skill → Experience → Career
+            </div>
+          </motion.div>
         </motion.div>
+
       </div>
 
       {/* =====================================================
@@ -1647,7 +1856,7 @@ export default function Hero() {
           bottom-0
           left-0
           right-0
-          z-[200]
+          z-40
           border-t
           border-slate-200
           bg-white/95
@@ -1657,6 +1866,7 @@ export default function Hero() {
           md:hidden
         "
       >
+
         <a
           href="#register"
           className="
@@ -1677,6 +1887,7 @@ export default function Hero() {
         >
           Register Now →
         </a>
+
       </div>
     </section>
   );

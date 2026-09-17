@@ -217,7 +217,7 @@ export default function Registration() {
           • Xerox copies of Aadhaar card, SSLC, HSC, Degree
         </li>
 
-        <li>
+          <li>
           • <span className="font-bold text-white">
               Original Copy of any 1 educational certificate
             </span>
@@ -397,10 +397,9 @@ export default function Registration() {
                         <p className="mt-2 text-sm leading-6 text-slate-600">
                           Candidates must complete a{" "}
                           <span className="font-black text-green-700">
-                            mandatory 1-year internship
+                            mandatory 1-year internship with a monthly salary of ₹15,000 to ₹18,000
                           </span>{" "}
-                          as part of the ACME HVAC skill development and career
-                          program.
+                          based on performance as part of the ACME HVAC skill development and career program.
                         </p>
                       </div>
                     </div>
