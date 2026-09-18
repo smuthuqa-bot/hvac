@@ -7,6 +7,8 @@ type CorporateInquiry = {
   companyName: string;
   gstin: string;
   address: string;
+  mobile: string;
+  email: string;
   employeesRequired: number;
   employmentType: "Permanent" | "Temporary";
   temporaryDuration: string | null;
@@ -21,16 +23,22 @@ export async function POST(request: Request) {
       companyName,
       gstin,
       address,
+      mobile,
+      email,
       employeesRequired,
       employmentType,
       temporaryDuration,
     } = body;
 
-    // Required field validation
+    // =========================================================
+    // REQUIRED FIELD VALIDATION
+    // =========================================================
     if (
       !companyName ||
       !gstin ||
       !address ||
+      !mobile ||
+      !email ||
       !employeesRequired ||
       !employmentType
     ) {
@@ -38,13 +46,47 @@ export async function POST(request: Request) {
         {
           success: false,
           message:
-            "Company name, GSTIN, address, employees required and employment type are required.",
+            "Company name, GSTIN, mobile, email, address, employees required and employment type are required.",
         },
         { status: 400 }
       );
     }
 
-    // Temporary employment requires duration
+    // =========================================================
+    // MOBILE VALIDATION
+    // =========================================================
+    const mobileNumber = String(mobile).trim();
+
+    if (!/^[0-9]{10}$/.test(mobileNumber)) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: "Please enter a valid 10-digit mobile number.",
+        },
+        { status: 400 }
+      );
+    }
+
+    // =========================================================
+    // EMAIL VALIDATION
+    // =========================================================
+    const emailAddress = String(email).trim().toLowerCase();
+
+    if (
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailAddress)
+    ) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: "Please enter a valid email address.",
+        },
+        { status: 400 }
+      );
+    }
+
+    // =========================================================
+    // TEMPORARY EMPLOYMENT VALIDATION
+    // =========================================================
     if (
       employmentType === "Temporary" &&
       !temporaryDuration
@@ -59,12 +101,17 @@ export async function POST(request: Request) {
       );
     }
 
+    // =========================================================
+    // DATE / TIME
+    // =========================================================
     const now = new Date();
 
     // YYYY-MM-DD
     const date = now.toISOString().split("T")[0];
 
-    // enquirydata folder
+    // =========================================================
+    // ENQUIRY DATA FOLDER
+    // =========================================================
     const enquiryDataPath = path.join(
       process.cwd(),
       "enquirydata"
@@ -75,7 +122,9 @@ export async function POST(request: Request) {
       recursive: true,
     });
 
-    // Daily JSON file
+    // =========================================================
+    // DAILY JSON FILE
+    // =========================================================
     const filePath = path.join(
       enquiryDataPath,
       `${date}.json`
@@ -83,7 +132,9 @@ export async function POST(request: Request) {
 
     let inquiries: CorporateInquiry[] = [];
 
-    // Read existing day's enquiries
+    // =========================================================
+    // READ EXISTING DAY'S ENQUIRIES
+    // =========================================================
     try {
       const existingData = await fs.readFile(
         filePath,
@@ -99,20 +150,31 @@ export async function POST(request: Request) {
       inquiries = [];
     }
 
-    // Generate enquiry number
+    // =========================================================
+    // GENERATE ENQUIRY NUMBER
+    // =========================================================
     const enquiryNumber =
       `ENQ-${date.replaceAll("-", "")}-${String(
         inquiries.length + 1
       ).padStart(3, "0")}`;
 
+    // =========================================================
+    // CREATE ENQUIRY OBJECT
+    // =========================================================
     const inquiry: CorporateInquiry = {
       id: enquiryNumber,
 
-      companyName: companyName.trim(),
+      companyName: String(companyName).trim(),
 
-      gstin: gstin.trim().toUpperCase(),
+      gstin: String(gstin).trim().toUpperCase(),
 
-      address: address.trim(),
+      address: String(address).trim(),
+
+      // Mobile number
+      mobile: mobileNumber,
+
+      // Email address
+      email: emailAddress,
 
       employeesRequired: Number(employeesRequired),
 
@@ -120,22 +182,29 @@ export async function POST(request: Request) {
 
       temporaryDuration:
         employmentType === "Temporary"
-          ? temporaryDuration?.trim() || null
+          ? String(temporaryDuration).trim()
           : null,
 
       enquiredAt: now.toISOString(),
     };
 
-    // Add new enquiry
+    // =========================================================
+    // ADD NEW ENQUIRY
+    // =========================================================
     inquiries.push(inquiry);
 
-    // Save daily JSON file
+    // =========================================================
+    // SAVE DAILY JSON FILE
+    // =========================================================
     await fs.writeFile(
       filePath,
       JSON.stringify(inquiries, null, 2),
       "utf-8"
     );
 
+    // =========================================================
+    // SUCCESS RESPONSE
+    // =========================================================
     return NextResponse.json({
       success: true,
       message: "Corporate enquiry submitted successfully.",
@@ -157,6 +226,9 @@ export async function POST(request: Request) {
   }
 }
 
+// =============================================================
+// GET ALL CORPORATE ENQUIRIES
+// =============================================================
 export async function GET() {
   try {
     const enquiryDataPath = path.join(

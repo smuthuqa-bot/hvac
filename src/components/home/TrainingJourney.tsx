@@ -268,13 +268,13 @@ export default function TrainingJourney() {
                   </p>
 
                   <h3 className="mt-1 text-2xl font-black leading-tight text-slate-950 sm:text-3xl">
-                    1 Year Practical Experience
+                    1 Year Practical Experience with salary
                   </h3>
                 </div>
               </div>
 
               <p className="mt-5 max-w-2xl text-sm leading-6 text-slate-700 sm:text-base sm:leading-7">
-                The program includes a mandatory one-year internship,
+                The program includes a mandatory one-year internship with a salary,
                 giving candidates valuable exposure to a professional
                 working environment and helping them build confidence
                 before entering the industry.

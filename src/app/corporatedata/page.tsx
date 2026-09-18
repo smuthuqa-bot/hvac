@@ -7,6 +7,8 @@ type CorporateInquiry = {
   companyName: string;
   gstin: string;
   address: string;
+  mobile: string | null;
+  email: string | null;
   employeesRequired: number;
   employmentType: "Permanent" | "Temporary";
   temporaryDuration: string | null;
@@ -20,10 +22,7 @@ type CorporateInquiryDay = {
 };
 
 export default function CorporateDataPage() {
-  const [data, setData] = useState<CorporateInquiryDay[]>(
-    []
-  );
-
+  const [data, setData] = useState<CorporateInquiryDay[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedDate, setSelectedDate] = useState("");
   const [search, setSearch] = useState("");
@@ -31,19 +30,12 @@ export default function CorporateDataPage() {
   useEffect(() => {
     const loadCorporateInquiries = async () => {
       try {
-        const response = await fetch(
-          "/api/corporate-inquiries"
-        );
-
+        const response = await fetch("/api/corporate-inquiries");
         const result = await response.json();
 
         if (result.success) {
           setData(result.data);
 
-          /*
-           * Automatically select latest
-           * available enquiry date.
-           */
           if (result.data.length > 0) {
             setSelectedDate(result.data[0].date);
           }
@@ -61,9 +53,6 @@ export default function CorporateDataPage() {
     loadCorporateInquiries();
   }, []);
 
-  /*
-   * Total enquiries
-   */
   const totalInquiries = useMemo(() => {
     return data.reduce(
       (total, day) => total + day.count,
@@ -71,21 +60,13 @@ export default function CorporateDataPage() {
     );
   }, [data]);
 
-  /*
-   * Selected day
-   */
   const selectedDay = data.find(
     (day) => day.date === selectedDate
   );
 
-  /*
-   * Search selected day's enquiries
-   */
   const filteredInquiries =
     selectedDay?.inquiries.filter((inquiry) => {
-      const searchText = search
-        .toLowerCase()
-        .trim();
+      const searchText = search.toLowerCase().trim();
 
       if (!searchText) {
         return true;
@@ -104,6 +85,12 @@ export default function CorporateDataPage() {
         inquiry.id
           .toLowerCase()
           .includes(searchText) ||
+        (inquiry.mobile || "")
+          .toLowerCase()
+          .includes(searchText) ||
+        (inquiry.email || "")
+          .toLowerCase()
+          .includes(searchText) ||
         inquiry.employmentType
           .toLowerCase()
           .includes(searchText) ||
@@ -116,16 +103,10 @@ export default function CorporateDataPage() {
       );
     }) || [];
 
-  /*
-   * Today's date
-   */
   const today = new Date()
     .toISOString()
     .split("T")[0];
 
-  /*
-   * Date formatting
-   */
   const formatDate = (date: string) => {
     if (!date) return "-";
 
@@ -140,9 +121,6 @@ export default function CorporateDataPage() {
     });
   };
 
-  /*
-   * Date + time formatting
-   */
   const formatDateTime = (date: string) => {
     return new Date(date).toLocaleString("en-IN", {
       day: "2-digit",
@@ -153,9 +131,6 @@ export default function CorporateDataPage() {
     });
   };
 
-  /*
-   * Change selected date
-   */
   const handleDateChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -199,7 +174,6 @@ export default function CorporateDataPage() {
             SUMMARY CARDS
         ===================================================== */}
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {/* Total */}
           <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
             <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
               Total Corporate Enquiries
@@ -210,7 +184,6 @@ export default function CorporateDataPage() {
             </p>
           </div>
 
-          {/* Enquiry Days */}
           <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
             <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
               Enquiry Days
@@ -221,7 +194,6 @@ export default function CorporateDataPage() {
             </p>
           </div>
 
-          {/* Selected Date */}
           <div className="rounded-2xl border border-blue-100 bg-blue-50 p-5 shadow-sm">
             <p className="text-xs font-bold uppercase tracking-wider text-blue-600">
               Selected Date
@@ -240,7 +212,6 @@ export default function CorporateDataPage() {
         ===================================================== */}
         <section className="mt-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
           <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
-            {/* Heading */}
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-blue-600">
                 Corporate Enquiry History
@@ -256,7 +227,6 @@ export default function CorporateDataPage() {
               </p>
             </div>
 
-            {/* Calendar */}
             <div className="w-full lg:max-w-xs">
               <label
                 htmlFor="corporate-date"
@@ -350,9 +320,8 @@ export default function CorporateDataPage() {
                 </h2>
 
                 <p className="mt-1 text-sm text-slate-400">
-                  {selectedDay?.count || 0} corporate
-                  enquiry
-                  {(selectedDay?.count || 0) !== 1
+                  {filteredInquiries.length} corporate enquiry
+                  {filteredInquiries.length !== 1
                     ? "ies"
                     : ""}
                 </p>
@@ -366,7 +335,7 @@ export default function CorporateDataPage() {
                   onChange={(event) =>
                     setSearch(event.target.value)
                   }
-                  placeholder="Search company, GSTIN, ID..."
+                  placeholder="Search company, GSTIN, mobile, email..."
                   className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
                 />
               </div>
@@ -381,7 +350,9 @@ export default function CorporateDataPage() {
               </div>
             ) : !selectedDate ? (
               <div className="p-10 text-center">
-                <div className="text-4xl">📅</div>
+                <div className="text-4xl">
+                  📅
+                </div>
 
                 <p className="mt-3 text-sm font-bold text-slate-700">
                   Select an enquiry date
@@ -389,7 +360,9 @@ export default function CorporateDataPage() {
               </div>
             ) : filteredInquiries.length === 0 ? (
               <div className="p-10 text-center">
-                <div className="text-4xl">🏢</div>
+                <div className="text-4xl">
+                  🏢
+                </div>
 
                 <p className="mt-3 text-sm font-bold text-slate-700">
                   No corporate enquiries found
@@ -401,38 +374,56 @@ export default function CorporateDataPage() {
                 </p>
               </div>
             ) : (
-              <table className="w-full min-w-[1200px] text-left">
+              <table className="w-full min-w-[1500px] text-left">
                 <thead>
                   <tr className="border-b border-slate-100 bg-slate-50">
-                    <th className="px-5 py-4 text-xs font-bold uppercase tracking-wider text-slate-400">
+                    {/* Enquiry ID */}
+                    <th className="whitespace-nowrap px-5 py-4 text-xs font-bold uppercase tracking-wider text-slate-400">
                       Enquiry ID
                     </th>
 
-                    <th className="px-5 py-4 text-xs font-bold uppercase tracking-wider text-slate-400">
+                    {/* Company */}
+                    <th className="whitespace-nowrap px-5 py-4 text-xs font-bold uppercase tracking-wider text-slate-400">
                       Company
                     </th>
 
-                    <th className="px-5 py-4 text-xs font-bold uppercase tracking-wider text-slate-400">
+                    {/* GSTIN */}
+                    <th className="whitespace-nowrap px-5 py-4 text-xs font-bold uppercase tracking-wider text-slate-400">
                       GSTIN
                     </th>
 
-                    <th className="px-5 py-4 text-xs font-bold uppercase tracking-wider text-slate-400">
+                    {/* Mobile */}
+                    <th className="whitespace-nowrap px-5 py-4 text-xs font-bold uppercase tracking-wider text-slate-400">
+                      Mobile
+                    </th>
+
+                    {/* Email */}
+                    <th className="whitespace-nowrap px-5 py-4 text-xs font-bold uppercase tracking-wider text-slate-400">
+                      Email
+                    </th>
+
+                    {/* Employees */}
+                    <th className="whitespace-nowrap px-5 py-4 text-xs font-bold uppercase tracking-wider text-slate-400">
                       Employees
                     </th>
 
-                    <th className="px-5 py-4 text-xs font-bold uppercase tracking-wider text-slate-400">
+                    {/* Employment Type */}
+                    <th className="whitespace-nowrap px-5 py-4 text-xs font-bold uppercase tracking-wider text-slate-400">
                       Employment Type
                     </th>
 
-                    <th className="px-5 py-4 text-xs font-bold uppercase tracking-wider text-slate-400">
+                    {/* Duration */}
+                    <th className="whitespace-nowrap px-5 py-4 text-xs font-bold uppercase tracking-wider text-slate-400">
                       Duration
                     </th>
 
-                    <th className="px-5 py-4 text-xs font-bold uppercase tracking-wider text-slate-400">
+                    {/* Address */}
+                    <th className="whitespace-nowrap px-5 py-4 text-xs font-bold uppercase tracking-wider text-slate-400">
                       Address
                     </th>
 
-                    <th className="px-5 py-4 text-xs font-bold uppercase tracking-wider text-slate-400">
+                    {/* Enquired */}
+                    <th className="whitespace-nowrap px-5 py-4 text-xs font-bold uppercase tracking-wider text-slate-400">
                       Enquired
                     </th>
                   </tr>
@@ -466,6 +457,44 @@ export default function CorporateDataPage() {
                           </span>
                         </td>
 
+                        {/* Mobile */}
+                        <td className="whitespace-nowrap px-5 py-4">
+                          {inquiry.mobile ? (
+                            <a
+                              href={`tel:${inquiry.mobile}`}
+                              className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 transition hover:text-blue-800 hover:underline"
+                            >
+                              <span>📱</span>
+                              <span>
+                                {inquiry.mobile}
+                              </span>
+                            </a>
+                          ) : (
+                            <span className="text-sm text-slate-400">
+                              -
+                            </span>
+                          )}
+                        </td>
+
+                        {/* Email */}
+                        <td className="px-5 py-4">
+                          {inquiry.email ? (
+                            <a
+                              href={`mailto:${inquiry.email}`}
+                              className="inline-flex max-w-[260px] items-center gap-2 text-sm font-semibold text-blue-600 transition hover:text-blue-800 hover:underline"
+                            >
+                              <span>✉️</span>
+                              <span className="truncate">
+                                {inquiry.email}
+                              </span>
+                            </a>
+                          ) : (
+                            <span className="text-sm text-slate-400">
+                              -
+                            </span>
+                          )}
+                        </td>
+
                         {/* Employees */}
                         <td className="whitespace-nowrap px-5 py-4">
                           <span className="text-sm font-black text-slate-800">
@@ -495,12 +524,15 @@ export default function CorporateDataPage() {
 
                         {/* Address */}
                         <td className="max-w-[250px] px-5 py-4 text-sm text-slate-500">
-                          <p className="truncate">
+                          <p
+                            className="truncate"
+                            title={inquiry.address}
+                          >
                             {inquiry.address}
                           </p>
                         </td>
 
-                        {/* Date */}
+                        {/* Enquired */}
                         <td className="whitespace-nowrap px-5 py-4 text-xs text-slate-500">
                           {formatDateTime(
                             inquiry.enquiredAt

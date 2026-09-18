@@ -9,6 +9,8 @@ export default function CorporateInquiry() {
   const [formData, setFormData] = useState({
     companyName: "",
     gstin: "",
+    mobile: "",
+    email: "",
     address: "",
     employeesRequired: "",
     employmentType: "Permanent" as EmploymentType,
@@ -55,6 +57,8 @@ export default function CorporateInquiry() {
         body: JSON.stringify({
           companyName: formData.companyName,
           gstin: formData.gstin,
+          mobile: formData.mobile,
+          email: formData.email,
           address: formData.address,
           employeesRequired: Number(formData.employeesRequired),
           employmentType: formData.employmentType,
@@ -80,6 +84,8 @@ export default function CorporateInquiry() {
       setFormData({
         companyName: "",
         gstin: "",
+        mobile: "",
+        email: "",
         address: "",
         employeesRequired: "",
         employmentType: "Permanent",
@@ -138,7 +144,6 @@ export default function CorporateInquiry() {
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
         {/* =========================================================
             SECTION HEADER
         ========================================================= */}
@@ -175,7 +180,6 @@ export default function CorporateInquiry() {
             MANPOWER HIGHLIGHTS
         ========================================================= */}
         <div className="mx-auto mb-10 grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
-
           {[
             {
               icon: "👷",
@@ -242,12 +246,10 @@ export default function CorporateInquiry() {
           className="mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-2xl shadow-slate-200/70"
         >
           <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
-
             {/* =====================================================
                 LEFT PANEL
             ===================================================== */}
             <div className="relative overflow-hidden bg-slate-950 p-7 text-white sm:p-10 lg:p-12">
-
               {/* Grid pattern */}
               <div
                 className="pointer-events-none absolute inset-0 opacity-[0.08]"
@@ -263,12 +265,8 @@ export default function CorporateInquiry() {
               <div className="absolute -bottom-32 -left-32 h-80 w-80 rounded-full bg-cyan-500/10 blur-3xl" />
 
               <div className="relative z-10">
-
-                {/* =================================================
-                    HVAC TECHNICIAN TOY / MASCOT
-                ================================================= */}
+                {/* HVAC TECHNICIAN */}
                 <div className="relative mb-8 flex h-52 items-center justify-center">
-
                   {/* Orbit */}
                   <motion.div
                     animate={{ rotate: 360 }}
@@ -294,7 +292,6 @@ export default function CorporateInquiry() {
                   >
                     {/* Technician head */}
                     <div className="relative mx-auto h-16 w-16 rounded-full bg-orange-200 shadow-xl">
-
                       {/* Helmet */}
                       <div className="absolute -top-3 left-1/2 h-7 w-20 -translate-x-1/2 rounded-t-full bg-blue-500 shadow-lg" />
 
@@ -311,7 +308,6 @@ export default function CorporateInquiry() {
 
                     {/* Body */}
                     <div className="relative mx-auto h-24 w-24 rounded-t-[2rem] bg-blue-600 shadow-xl">
-
                       {/* Safety vest */}
                       <div className="absolute left-1/2 top-0 h-full w-2 -translate-x-1/2 bg-yellow-300/80" />
 
@@ -408,7 +404,6 @@ export default function CorporateInquiry() {
 
                 {/* Process */}
                 <div className="space-y-4">
-
                   {[
                     {
                       number: "01",
@@ -479,7 +474,6 @@ export default function CorporateInquiry() {
                 RIGHT FORM
             ===================================================== */}
             <div className="p-6 sm:p-10 lg:p-12">
-
               <div className="mb-8">
                 <span className="text-xs font-bold uppercase tracking-[0.18em] text-blue-600">
                   Corporate Requirement
@@ -498,8 +492,9 @@ export default function CorporateInquiry() {
                 onSubmit={handleSubmit}
                 className="space-y-5"
               >
-
-                {/* Company */}
+                {/* =================================================
+                    COMPANY NAME
+                ================================================= */}
                 <div>
                   <label
                     htmlFor="companyName"
@@ -521,7 +516,9 @@ export default function CorporateInquiry() {
                   />
                 </div>
 
-                {/* GSTIN */}
+                {/* =================================================
+                    GSTIN
+                ================================================= */}
                 <div>
                   <label
                     htmlFor="gstin"
@@ -544,7 +541,65 @@ export default function CorporateInquiry() {
                   />
                 </div>
 
-                {/* Location */}
+                {/* =================================================
+                    MOBILE + EMAIL
+                ================================================= */}
+                <div className="grid gap-5 sm:grid-cols-2">
+                  {/* Mobile */}
+                  <div>
+                    <label
+                      htmlFor="mobile"
+                      className="mb-2 block text-sm font-bold text-slate-700"
+                    >
+                      Mobile Number
+                      <span className="ml-1 text-red-500">*</span>
+                    </label>
+
+                    <input
+                      id="mobile"
+                      name="mobile"
+                      type="tel"
+                      required
+                      inputMode="numeric"
+                      maxLength={10}
+                      pattern="[0-9]{10}"
+                      value={formData.mobile}
+                      onChange={handleChange}
+                      placeholder="Enter mobile number"
+                      className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-100"
+                    />
+
+                    <p className="mt-1 text-xs text-slate-400">
+                      10-digit mobile number
+                    </p>
+                  </div>
+
+                  {/* Email */}
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="mb-2 block text-sm font-bold text-slate-700"
+                    >
+                      Email Address
+                      <span className="ml-1 text-red-500">*</span>
+                    </label>
+
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="Enter email address"
+                      className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-100"
+                    />
+                  </div>
+                </div>
+
+                {/* =================================================
+                    LOCATION
+                ================================================= */}
                 <div>
                   <label
                     htmlFor="address"
@@ -566,7 +621,9 @@ export default function CorporateInquiry() {
                   />
                 </div>
 
-                {/* Employees */}
+                {/* =================================================
+                    EMPLOYEES
+                ================================================= */}
                 <div>
                   <label
                     htmlFor="employeesRequired"
@@ -590,7 +647,7 @@ export default function CorporateInquiry() {
                 </div>
 
                 {/* =================================================
-                    EMPLOYMENT TYPE CARDS
+                    EMPLOYMENT TYPE
                 ================================================= */}
                 <div>
                   <label className="mb-3 block text-sm font-bold text-slate-700">
@@ -599,7 +656,6 @@ export default function CorporateInquiry() {
                   </label>
 
                   <div className="grid gap-3 sm:grid-cols-2">
-
                     {/* Permanent */}
                     <motion.button
                       type="button"
