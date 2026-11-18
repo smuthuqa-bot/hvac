@@ -3,28 +3,28 @@
 import { motion } from "framer-motion";
 
 const benefits = [
+  // {
+  //   number: "01",
+  //   icon: "₹",
+  //   title: "Government + Company Stipend",
+  //   description:
+  //     "Financial support during the course duration to help you focus on learning and skill development.",
+  //   bg: "bg-green-50/70",
+  //   iconBg: "bg-green-100",
+  //   iconText: "text-green-600",
+  // },
+  // {
+  //   number: "02",
+  //   icon: "✦",
+  //   title: "Government Certificate",
+  //   description:
+  //     "Build your professional profile with certification opportunities associated with the training program.",
+  //   bg: "bg-blue-50/70",
+  //   iconBg: "bg-blue-100",
+  //   iconText: "text-blue-600",
+  // },
   {
     number: "01",
-    icon: "₹",
-    title: "Government + Company Stipend",
-    description:
-      "Financial support during the course duration to help you focus on learning and skill development.",
-    bg: "bg-green-50/70",
-    iconBg: "bg-green-100",
-    iconText: "text-green-600",
-  },
-  {
-    number: "02",
-    icon: "✦",
-    title: "Government Certificate",
-    description:
-      "Build your professional profile with certification opportunities associated with the training program.",
-    bg: "bg-blue-50/70",
-    iconBg: "bg-blue-100",
-    iconText: "text-blue-600",
-  },
-  {
-    number: "03",
     icon: "₹",
     title: "Attractive Salary",
     description:
@@ -34,7 +34,7 @@ const benefits = [
     iconText: "text-amber-600",
   },
   {
-    number: "04",
+    number: "02",
     icon: "⌂",
     title: "Food & Accommodation",
     description:
@@ -44,7 +44,7 @@ const benefits = [
     iconText: "text-purple-600",
   },
   {
-    number: "05",
+    number: "03",
     icon: "◆",
     title: "Uniform Provided",
     description:
@@ -54,7 +54,7 @@ const benefits = [
     iconText: "text-cyan-600",
   },
   {
-    number: "06",
+    number: "04",
     icon: "✓",
     title: "1-Year Experience Certificate",
     description:

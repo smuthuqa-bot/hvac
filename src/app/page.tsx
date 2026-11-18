@@ -11,6 +11,7 @@ import Contact from "@/components/home/Contact";
 import SkillDevelopmentClasses from "@/components/home/SkillDevelopmentClasses";
 import FounderChairman from "@/components/home/FounderChairman";
 import CorporateInquiry from "@/components/home/CorporateInquiry";
+import ACMEJobGuaranteeAnimation from "@/components/home/ACMEJobGuaranteeAnimation";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
         <FAQ />
         <Contact />
         <CorporateInquiry />
+        <ACMEJobGuaranteeAnimation />
         <Registration />
       </main>
 

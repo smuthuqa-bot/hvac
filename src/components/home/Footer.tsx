@@ -51,7 +51,7 @@ export default function Footer() {
               </div>
 
               {/* TN Skill Logo */}
-              <div
+              {/* <div
                 className="
                   flex
                   h-[52px]
@@ -76,8 +76,8 @@ export default function Footer() {
                   src="/tnskill-logo.png"
                   alt="TN Skill"
                   className="h-full w-full object-contain"
-                />
-              </div>
+                /> 
+              </div> */}
             </div>
 
             {/* Small brand title */}

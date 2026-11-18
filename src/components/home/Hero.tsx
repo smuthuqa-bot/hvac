@@ -108,7 +108,7 @@ function HVACTechnician() {
       {/* Heading */}
       <div className="absolute left-3 top-3 z-20">
         <p className="text-[9px] font-semibold uppercase tracking-[0.22em] text-cyan-300">
-          ACME HVAC SDC
+          ACME SDC
         </p>
 
         <h3 className="mt-0.5 text-sm font-bold text-white">
@@ -655,7 +655,7 @@ export default function Hero() {
           </motion.div>
 
           {/* TN Skill Logo */}
-          <motion.div
+          {/* <motion.div
             initial={{
               opacity: 0,
               y: 25,
@@ -815,7 +815,7 @@ export default function Hero() {
               <span className="text-green-500">•</span>
               <span>Career</span>
             </motion.div>
-          </motion.div>
+          </motion.div> */}
 
           {/* Main heading */}
           <div className="overflow-hidden">
@@ -1773,7 +1773,7 @@ export default function Hero() {
               >
                 <div>
                   <p className="text-[9px] font-bold uppercase tracking-[0.22em] text-green-400">
-                    ACME HVAC SDC
+                    ACME SDC
                   </p>
 
                   <h2 className="mt-1 text-base font-black text-white sm:text-lg">
@@ -1907,7 +1907,7 @@ export default function Hero() {
                     </div>
 
                     <h3 className="text-xl font-black leading-tight text-white sm:text-2xl">
-                      Need Skilled HVAC Professionals?
+                      Looking for Skilled & Experienced HVAC Professionals?
                     </h3>
 
                     <p className="mt-2 text-xs leading-5 text-slate-300">

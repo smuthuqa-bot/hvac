@@ -8,7 +8,7 @@ const easeOut = [0.22, 1, 0.36, 1] as const;
 const management = [
   {
     role: "Founder / Chairman",
-    name: "Mr. Nagaraj G.",
+    name: "Dr. G. Nagaraj",
     location: "",
     initials: "NG",
   },
@@ -506,7 +506,7 @@ export default function FounderChairman() {
                       sm:text-sm
                     "
                   >
-                    Mr. Nagaraj G.
+                    Dr. G. Nagaraj
                   </p>
                 </motion.div>
 
@@ -1072,7 +1072,7 @@ export default function FounderChairman() {
                         sm:text-sm
                       "
                     >
-                      Mr. Nagaraj brings more than 30 years of
+                      Dr. G. Nagaraj brings more than 30 years of
                       experience in the HVAC field, providing
                       technical assistance and direction to achieve
                       sustainable organizational growth.

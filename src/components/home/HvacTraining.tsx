@@ -29,12 +29,6 @@ const trainingImages = [
     description:
       "ACME SDC recognized for excellence and contribution to the HVAC industry.",
   },
-  {
-    src: "/training/award5.jpeg",
-    title: "Industry Achievement",
-    description:
-      "Celebrating excellence and contribution to the HVAC industry.",
-  },
 ];
 
 export default function HvacTraining() {
@@ -407,7 +401,7 @@ export default function HvacTraining() {
                   text-green-400
                 "
               >
-                ACME SDC
+                
               </p>
 
               <h3
@@ -557,7 +551,6 @@ export default function HvacTraining() {
                   text-green-400
                 "
               >
-                ACME SDC
               </p>
 
               <h3
@@ -700,7 +693,7 @@ export default function HvacTraining() {
                   text-green-400
                 "
               >
-                ACME SDC
+              
               </p>
 
               <h3
@@ -759,7 +752,7 @@ export default function HvacTraining() {
             "
           >
             <Image
-              src="/training/award5.jpeg"
+              src="/training/tra10.jpg"
               alt="Industry Achievement"
               fill
               sizes="
@@ -830,7 +823,7 @@ export default function HvacTraining() {
                   text-green-400
                 "
               >
-                ACME SDC
+                
               </p>
 
               <h3
@@ -979,7 +972,7 @@ export default function HvacTraining() {
                   text-green-400
                 "
               >
-                ACME SDC
+                
               </p>
 
               <h3
